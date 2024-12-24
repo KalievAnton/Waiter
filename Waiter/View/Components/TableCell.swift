@@ -14,38 +14,22 @@ struct TableCell: View {
         VStack {
             VStack(alignment: .center) {
                 Text(viewModel.numberDesciption)
-                    .font(.custom("Montserrat-Bold", size: 16))
-                    .foregroundColor(Color.black)
+                    .txtTableCellFalseStyle()
                 Group {
                     if viewModel.isFree {
                         Text("Свободен")
-                            .customStyle()
-                            .padding(12)
+                            .txtTableCellTrueStyle()
                     } else {
                         Text(viewModel.guestDescription)
-                            .customStyle()
-                            .padding(12)
+                            .txtTableCellTrueStyle()
                         Text(viewModel.cashDescription)
-                            .customStyle()
+                            .txtTableCellTotalStyle()
                     }
                 }
             }
-            
-            .frame(maxWidth: .infinity, minHeight: 180)
+            .frame(minWidth: 190, minHeight: 180)
         }
     }
-}
-
-struct StyleViewModifire: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.custom("Montserrat-Regular", size: 16))
-            .foregroundColor(Color.black)
-    }
-}
-
-extension View {
-    func customStyle() -> some View { modifier(StyleViewModifire()) }
 }
 
 #Preview {

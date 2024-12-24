@@ -13,14 +13,14 @@ struct DishCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(viewModel.dish.title)
-                .font(.custom("Montserrat-Bold", size: 16))
+                .fontDishCellFalseStyle()
             HStack(spacing: 100) {
                 Text(viewModel.priceDescription)
-                    .font(.custom("Montserrat-Regular", size: 16))
+                    .fontDishCellTrueStyle()
                 Text(viewModel.amountDescription)
-                    .font(.custom("Montserrat-Regular", size: 16))
+                    .fontDishCellTrueStyle()
                 Text(viewModel.sumDescription)
-                    .font(.custom("Montserrat-Regular", size: 16))
+                    .fontDishCellTrueStyle()
             }
             .padding(.top)
         }

@@ -19,7 +19,7 @@ class Table: Identifiable {
     
    init(number: Int = 0, isTable: Bool = true, guest: Int = 0, dishes: [Dish] = []) {
         self.number = number
-       self.isTable = isTable
+        self.isTable = isTable
         self.guest = guest
         self.dishes = dishes
     }

@@ -29,14 +29,10 @@ struct TableView: View {
             }
             HStack {
                 Text("ИТОГО:")
-                    .font(.custom("Montserrat-Bold", size: 24))
-                    .foregroundStyle(.white)
-                    .padding(.leading, 16)
+                    .tfBottomTotalTableStyle().padding(.leading, 16)
                 Spacer()
                 Text(viewModel.totalTableDescription)
-                    .font(.custom("Montserrat-Bold", size: 24))
-                    .foregroundStyle(.white)
-                    .padding(.trailing, 16)
+                    .tfBottomTotalTableStyle().padding(.trailing, 16)
             }
         }
         .background {

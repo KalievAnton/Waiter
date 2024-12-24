@@ -29,14 +29,14 @@ struct AuthView: View {
 официанта
 """
             )
-            .customStyleTxtBtn()
+            .txtBottomAuthStyle()
             .padding(.top, -7)
             TextField("Введите номер сотрудника", text: $viewModel.user.number)
-                .customStyleTF()
+                .tfAuthStyle()
                 .padding(.top, 40)
             if !viewModel.isAuth {
                 SecureField("Введите пин-код", text: $viewModel.user.pin)
-                    .customStyleTF()
+                    .tfAuthStyle()
             }
             Button {
                 switch viewModel.isAuth {
@@ -60,7 +60,7 @@ struct AuthView: View {
                 Text(viewModel.isAuth ? "Далее" : "Войти")
                     .frame(maxWidth: .infinity, maxHeight: 44)
                     .background(Color.button)
-                    .customStyleTxtBtn()
+                    .txtBottomAuthStyle()
             }
         }
         .padding(.horizontal, 48)
@@ -78,35 +78,6 @@ struct AuthView: View {
             Text(viewModel.messageError?.failureReason ?? "")
         }
     }
-}
-
-struct TFStyleViewModifire: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding(12)
-            .font(.custom("Montserrat-Regular", size: 16))
-            .multilineTextAlignment(.center)
-            .background(ignoresSafeAreaEdges: .all)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-    }
-}
-
-struct TxtBtnStyleViewModifire: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.custom("Montserrat-Regular", size: 16))
-            .foregroundColor(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .multilineTextAlignment(.center)
-    }
-}
-
-extension View {
-    func customStyleTF() -> some View { modifier(TFStyleViewModifire()) }
-}
-
-extension View {
-    func customStyleTxtBtn() -> some View { modifier(TxtBtnStyleViewModifire()) }
 }
 
 #Preview {

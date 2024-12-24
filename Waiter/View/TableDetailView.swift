@@ -23,14 +23,10 @@ struct TableDetailView: View {
             }
             HStack {
                 Text("ИТОГО:")
-                    .font(.custom("Montserrat-Bold", size: 24))
-                    .foregroundStyle(.white)
-                    .padding(.leading, 16)
+                    .tfBottomTotalTableStyle().padding(.leading, 16)
                 Spacer()
                 Text(viewModel.totalDishDescription)
-                    .font(.custom("Montserrat-Bold", size: 24))
-                    .foregroundStyle(.white)
-                    .padding(.trailing, 16)
+                    .tfBottomTotalTableStyle().padding(.trailing, 16)
             }
         }
         .background {
@@ -44,7 +40,6 @@ struct TableDetailView: View {
                 viewModel.table.id == table.id
             }) else { return }
             tableVM.table[index] = viewModel.table
-            print(index)
         }
     }
 }
