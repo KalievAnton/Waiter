@@ -34,6 +34,7 @@
 		E2EB16842D14253100FD4F17 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB16832D14253100FD4F17 /* Error.swift */; };
 		E2EB16872D14255000FD4F17 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2EB16862D14255000FD4F17 /* Montserrat-Regular.ttf */; };
 		E2EB16892D14255400FD4F17 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2EB16882D14255400FD4F17 /* Montserrat-Bold.ttf */; };
+		E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0DCE12D26BE6C00FFEF62 /* Fonts + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		E2EB16862D14255000FD4F17 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E2EB16882D14255400FD4F17 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E2EB168A2D14265000FD4F17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2F0DCE12D26BE6C00FFEF62 /* Fonts + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E24FA4E02D1AB8B300F2C93C /* CustomViewExtensions.swift */,
+				E2F0DCE12D26BE6C00FFEF62 /* Fonts + Ext.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				E2EB166B2D14233F00FD4F17 /* TableView.swift in Sources */,
 				E2EB16652D1422D600FD4F17 /* Dish.swift in Sources */,
 				E2EB16812D14251000FD4F17 /* DishCellViewModel.swift in Sources */,
+				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */,
 				E2EB16732D14243F00FD4F17 /* Coordinator.swift in Sources */,
 				E2EB167F2D1424FD00FD4F17 /* TableCellViewModel.swift in Sources */,

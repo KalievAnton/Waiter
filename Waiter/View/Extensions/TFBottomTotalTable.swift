@@ -11,7 +11,7 @@ struct TFBottomTotalTable: ViewModifier {
     var padding: EdgeInsets
     func body(content: Content) -> some View {
         content
-            .font(.custom("Montserrat-Bold", size: 24))
+            .font(Font.custom(.boldMontserrat, size: 24))
             .foregroundStyle(.white)
     }
 }

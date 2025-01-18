@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct TxtBottomAuth: ViewModifier {
+    var padding: EdgeInsets
     func body(content: Content) -> some View {
         content
-            .font(.custom("Montserrat-Regular", size: 16))
+            .font(Font.custom(.regularMontserrat, size: 16))
             .foregroundColor(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .multilineTextAlignment(.center)

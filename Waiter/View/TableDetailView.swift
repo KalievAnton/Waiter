@@ -36,7 +36,7 @@ struct TableDetailView: View {
                 .scaleEffect()
         }
         .onDisappear {
-           guard let index = tableVM.table.firstIndex (where: { table in
+            guard let index = tableVM.table.firstIndex (where: { table in
                 viewModel.table.id == table.id
             }) else { return }
             tableVM.table[index] = viewModel.table

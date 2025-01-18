@@ -21,7 +21,7 @@ struct TableView: View {
                             TableDetailView(viewModel: .init(table: table), tableVM: viewModel)
                         } label: {
                             TableCell(viewModel: .init(table: table))
-                                .background(table.isTable ? Color.table1 : Color.table2)
+                                .background(table.isTable ? Color.tableGreen : Color.tableBlue)
                                 .clipShape(.rect(cornerRadius: 20))
                         }
                     }

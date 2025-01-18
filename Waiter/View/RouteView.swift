@@ -13,7 +13,9 @@ struct RouteView: View {
     var body: some View {
         switch coordinator.appState {
         case .authorized(let user):
-            TableView(coordinator: $coordinator, viewModel: .init(user: user))
+            NavigationStack {
+                TableView(coordinator: $coordinator, viewModel: .init(user: user))
+            }
         case .unauthorized:
             AuthView(coordinator: $coordinator)
         }
@@ -24,7 +26,7 @@ enum AppState {
     case authorized(user: User)
     case unauthorized
 }
-    
+
 #Preview {
     RouteView()
 }

@@ -7,10 +7,11 @@
 import SwiftUI
 
 struct TFAuth: ViewModifier {
+    var padding: EdgeInsets
     func body(content: Content) -> some View {
         content
             .padding(12)
-            .font(.custom("Montserrat-Regular", size: 16))
+            .font(Font.custom(.regularMontserrat, size: 16))
             .multilineTextAlignment(.center)
             .background(ignoresSafeAreaEdges: .all)
             .clipShape(RoundedRectangle(cornerRadius: 10))

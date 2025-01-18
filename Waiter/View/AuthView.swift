@@ -17,27 +17,21 @@ struct AuthView: View {
             Image("logo")
                 .frame(width: 150, height: (141))
             Text("Waiter App")
-                .font(.custom("Montserrat-Regular", size: 32))
+                .font(Font.custom(.regularMontserrat, size: 32))
                 .foregroundColor(.white)
             Divider()
                 .frame(width: 270, height: 1, alignment: .center)
                 .background(.white)
                 .padding(.top, -8)
-            Text(
-"""
-Интерактивный блокнот
-официанта
-"""
-            )
-            .txtBottomAuthStyle()
-            .padding(.top, -7)
+            Text("Интерактивный блокнот\nофицианта")
+            .txtBottomAuthStyle().padding(.top, -7)
             TextField("Введите номер сотрудника", text: $viewModel.user.number)
-                .tfAuthStyle()
-                .padding(.top, 40)
+                .tfAuthStyle().padding(.top, 40)
             if !viewModel.isAuth {
                 SecureField("Введите пин-код", text: $viewModel.user.pin)
                     .tfAuthStyle()
             }
+            
             Button {
                 switch viewModel.isAuth {
                 case true:
@@ -47,7 +41,7 @@ struct AuthView: View {
                         if let error = error as? MyError { viewModel.messageError = error }
                         isShowAlert = true
                     }
-                    case false:
+                case false:
                     do {
                         try viewModel.checkPin(pin: viewModel.user.pin)
                         coordinator.appState = .authorized(user: viewModel.user)

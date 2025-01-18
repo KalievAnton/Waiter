@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DishCell: View {
-    var viewModel: DishCellViewModel
+    @State var viewModel: DishCellViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,7 +26,7 @@ struct DishCell: View {
         }
         .frame(width: 350, height: 80)
         .padding()
-        .background(Color.table1)
+        .background(Color.tableGreen)
         .clipShape(.rect(cornerRadius: 20))
     }
 }
