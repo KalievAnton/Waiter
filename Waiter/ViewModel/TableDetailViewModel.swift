@@ -11,6 +11,7 @@ import Foundation
 class TableDetailViewModel {
     var dish: [Dish] = []
     var table: Table
+    var searchText: String = ""
     var totalDishDescription: String { "\(total) ₽" }
     var total: Int {
         table.dishes.reduce(0) { $0 + $1.amount * $1.price }

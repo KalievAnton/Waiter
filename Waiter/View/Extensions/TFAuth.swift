@@ -12,6 +12,7 @@ struct TFAuth: ViewModifier {
         content
             .padding(12)
             .font(Font.custom(.regularMontserrat, size: 16))
+            .frame(height: 50)
             .multilineTextAlignment(.center)
             .background(ignoresSafeAreaEdges: .all)
             .clipShape(RoundedRectangle(cornerRadius: 10))

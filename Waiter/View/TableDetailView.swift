@@ -10,6 +10,7 @@ import SwiftUI
 struct TableDetailView: View {
     @State var viewModel: TableDetailViewModel
     @Bindable var tableVM: TableViewModel
+    @State private var showAddDishView: Bool = false
     let layout: [GridItem] = [.init()]
     
     var body: some View {
@@ -29,18 +30,43 @@ struct TableDetailView: View {
                     .tfBottomTotalTableStyle().padding(.trailing, 16)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
-            Image(.bg)
-                .resizable()
-                .ignoresSafeArea()
-                .scaleEffect()
+            Color.primary.ignoresSafeArea()
         }
+        
         .onDisappear {
             guard let index = tableVM.table.firstIndex (where: { table in
                 viewModel.table.id == table.id
             }) else { return }
             tableVM.table[index] = viewModel.table
         }
+        
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    showAddDishView = true
+                } label: {
+                    Image("plusCircle")
+                }
+            }
+        }
+        
+        .overlay {
+            ZStack {
+                Rectangle()
+                    .fill(Color.black.opacity(0.8))
+                    .ignoresSafeArea()
+                
+            }
+            .foregroundStyle(.white)
+            .frame(width: 370, height: 680, alignment: .leading)
+            .background(Color.white)
+            .clipShape(.rect(cornerRadius: 12))
+            .padding(.vertical, 5)
+            .offset(y: -20)
+        }
+        
     }
 }
 

@@ -14,25 +14,22 @@ struct AuthView: View {
     
     var body: some View {
         VStack {
-            Image("logo")
+            Image(R.Auth.logo)
                 .frame(width: 150, height: (141))
-            Text("Waiter App")
-                .font(Font.custom(.regularMontserrat, size: 32))
-                .foregroundColor(.white)
+            TextAuthCustom(text: R.Auth.title, isFont: false)
             Divider()
                 .frame(width: 270, height: 1, alignment: .center)
                 .background(.white)
                 .padding(.top, -8)
-            Text("Интерактивный блокнот\nофицианта")
-            .txtBottomAuthStyle().padding(.top, -7)
-            TextField("Введите номер сотрудника", text: $viewModel.user.number)
+            TextAuthCustom(text: R.Auth.subtitle, isFont: true)
+            TextField("Введите имя сотрудника", text: $viewModel.user.number)
                 .tfAuthStyle().padding(.top, 40)
             if !viewModel.isAuth {
                 SecureField("Введите пин-код", text: $viewModel.user.pin)
                     .tfAuthStyle()
             }
             
-            Button {
+            RoundedButton(text: viewModel.isAuth ? "Далее" : "Войти") {
                 switch viewModel.isAuth {
                 case true:
                     do {
@@ -50,20 +47,15 @@ struct AuthView: View {
                         isShowAlert = true
                     }
                 }
-            } label: {
-                Text(viewModel.isAuth ? "Далее" : "Войти")
-                    .frame(maxWidth: .infinity, maxHeight: 44)
-                    .background(Color.button)
-                    .txtBottomAuthStyle()
             }
         }
         .padding(.horizontal, 48)
-        .offset(y: -160)
+        .offset(y: -100)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
-            Image(.bg)
-                .scaleEffect(1.1)
-                .opacity(0.7)
+            Color.primary.ignoresSafeArea()
         }
+      
         .animation(.bouncy, value: viewModel.isAuth)
         
         .alert(viewModel.messageError?.localizedDescription ?? "", isPresented: $isShowAlert) {

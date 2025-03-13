@@ -27,6 +27,7 @@ struct TableView: View {
                     }
                 }
             }
+            
             HStack {
                 Text("ИТОГО:")
                     .tfBottomTotalTableStyle().padding(.leading, 16)
@@ -35,11 +36,9 @@ struct TableView: View {
                     .tfBottomTotalTableStyle().padding(.trailing, 16)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
-            Image(.bg)
-                .resizable()
-                .ignoresSafeArea()
-                .scaleEffect()
+            Color.primary.ignoresSafeArea()
         }
     }
 }

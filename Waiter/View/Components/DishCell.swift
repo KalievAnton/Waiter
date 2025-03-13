@@ -24,7 +24,7 @@ struct DishCell: View {
             }
             .padding(.top)
         }
-        .frame(width: 350, height: 80)
+        .frame(maxWidth: .infinity, maxHeight: 80)
         .padding()
         .background(Color.tableGreen)
         .clipShape(.rect(cornerRadius: 20))
@@ -32,5 +32,5 @@ struct DishCell: View {
 }
 
 #Preview {
-    DishCell(viewModel: .init(dish: Dish.mockData[0]))
+    DishCell(viewModel: .init(dish: Dish.mockData[2]))
 }

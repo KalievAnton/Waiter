@@ -10,6 +10,7 @@ import SwiftUI
 enum CustomFonts: String {
     case regularMontserrat = "Montserrat-Regular"
     case boldMontserrat = "Montserrat-Bold"
+    case mediumMontserrat = "Montserrat-Medium"
 }
 
 extension Font {
