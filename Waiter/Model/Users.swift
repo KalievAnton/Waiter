@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
-    var number = ""
-    var pin = ""
+struct Users {
+    var name = ""
+    var phone = ""
 }

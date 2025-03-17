@@ -13,7 +13,7 @@ struct TextAuthCustom: View {
     
     var body: some View {
         Text(text)
-            .font(isFont ? Font.custom(.mediumMontserrat, size: 17) : Font.custom(.boldMontserrat, size: 50))
+            .font(isFont ? Font.custom(.mediumMontserrat, size: 18) : Font.custom(.boldMontserrat, size: 50))
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
     }
