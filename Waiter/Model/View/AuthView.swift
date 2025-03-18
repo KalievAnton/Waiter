@@ -10,7 +10,7 @@ import SwiftUI
 struct AuthView: View {
     @Binding var coordinator: Coordinator
     @State private var viewModel = AuthViewModel()
-    @State private var isShow: Bool = false
+    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -23,31 +23,38 @@ struct AuthView: View {
                 .background(.white)
             TextAuthCustom(text: R.Auth.subtitle, isFont: true)
                 .padding(.bottom)
-                CustomDropdown()
-            if isShow {
-                RoundedTextField(text: $viewModel.profile.name, placeholder: "Введите имя")
-                RoundedTextField(text: $viewModel.profile.phone, placeholder: "Введите номер телефона")
+            CustomDropdown(role: $viewModel.role)
+                .padding(.bottom)
+            if viewModel.isAuth {
+                RoundedTextField(text: $viewModel.name, placeholder: "Введите имя")
+                RoundedTextField(text: $viewModel.phone,
+                                 placeholder: "Введите номер телефона")
+                    .overlay(alignment: .leading) {
+                        Text("+")
+                            .padding(.leading)
+                    }
             }
 
-            RoundedButton(text: isShow ? R.Auth.buttonEnter : R.Auth.buttonNext) {
+            RoundedButton(text: viewModel.isAuth  ? R.Auth.buttonEnter : R.Auth.buttonNext) {
                 switch viewModel.isAuth {
                 case true:
                     do {
-                        try viewModel.checkNumber(number: viewModel.user.name)
+                        //TODO: Написать метод для проверки имени
+                        try viewModel.checkNumber(number: viewModel.phone)
                     } catch {
                         if let error = error as? MyError { viewModel.messageError = error }
-                        isShow = true
+                        showAlert = true
                     }
                 case false:
-                    do {
-                        try viewModel.checkPin(pin: viewModel.user.phone)
-                        coordinator.appState = .authorized(user: viewModel.user)
-                    } catch {
-                        if let error = error as? MyError { viewModel.messageError = error }
-                        isShow = true
+                    if viewModel.role != nil {
+                        viewModel.isAuth = true
+                    } else {
+                        viewModel.messageError = .invalidRole
+                        showAlert = true
                     }
                 }
             }
+            .padding(.top)
         }
         .padding(.horizontal, 48)
         .offset(y: -100)
@@ -58,7 +65,7 @@ struct AuthView: View {
       
         .animation(.bouncy, value: viewModel.isAuth)
         
-        .alert(viewModel.messageError?.localizedDescription ?? "", isPresented: $isShow) {
+        .alert(viewModel.messageError?.localizedDescription ?? "", isPresented: $showAlert) {
             Button("OK") { }
         } message: {
             Text(viewModel.messageError?.failureReason ?? "")

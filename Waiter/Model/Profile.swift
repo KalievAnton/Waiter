@@ -22,7 +22,7 @@ class Profile: Identifiable {
 }
 
 enum Role: String, CaseIterable {
-    case admin
+    case admin 
     case owner
     case waiter
     case chef

@@ -43,6 +43,6 @@ struct TableView: View {
     }
 }
 
-#Preview {
-    TableView(coordinator: .constant(.init()), viewModel: .init(user: .init()))
-}
+//#Preview {
+//    TableView(coordinator: .constant(.init()), viewModel: .init(user: .init()))
+//}

@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class Coordinator {
+final class Coordinator {
     let user = Users()
     var appState: AppState = .unauthorized
     

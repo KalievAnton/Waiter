@@ -14,11 +14,12 @@ struct RouteView: View {
         switch coordinator.appState {
         case .authorized(let userID):
             NavigationStack {
-                TableView(coordinator: $coordinator, viewModel: .init(user: userID))
+                TableView(coordinator: $coordinator,
+                          viewModel: .init(userID: userID))
                     .navigationTitle("Столы")
             }
         case .unauthorized:
-            AuthView(coordinator: coordinator)
+            AuthView(coordinator: $coordinator)
         }
     }
 }

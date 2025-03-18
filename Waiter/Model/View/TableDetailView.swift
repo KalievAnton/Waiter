@@ -70,6 +70,6 @@ struct TableDetailView: View {
     }
 }
 
-#Preview {
-    TableDetailView(viewModel: .init(table: .init()), tableVM: .init(user: .init()))
-}
+//#Preview {
+//    TableDetailView(viewModel: .init(table: .init()), tableVM: .init(user: .init()))
+//}
