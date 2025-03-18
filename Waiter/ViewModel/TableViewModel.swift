@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class TableViewModel {
-    var user: User
+    var user: Users
     var table: [Table] = [
         .init(number: 1, isTable: true,guest: 0, dishes: []),
         .init(number: 2, isTable: false, guest: 3, dishes: []),
@@ -22,7 +22,7 @@ class TableViewModel {
        table.reduce(0) { $0 + $1.cash }
     }
     
-    init(user: User) {
+    init(user: Users) {
         self.user = user
     }
 }

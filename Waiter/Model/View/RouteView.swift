@@ -9,23 +9,22 @@ import SwiftUI
 
 struct RouteView: View {
     @State var coordinator = Coordinator()
-    init() { UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.accent] }
     
     var body: some View {
         switch coordinator.appState {
-        case .authorized(let user):
+        case .authorized(let userID):
             NavigationStack {
-                TableView(coordinator: $coordinator, viewModel: .init(user: user))
+                TableView(coordinator: $coordinator, viewModel: .init(user: userID))
                     .navigationTitle("Столы")
             }
         case .unauthorized:
-            AuthView(coordinator: $coordinator)
+            AuthView(coordinator: coordinator)
         }
     }
 }
 
 enum AppState {
-    case authorized(user: User)
+    case authorized(userID: String)
     case unauthorized
 }
 

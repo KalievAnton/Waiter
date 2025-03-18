@@ -9,6 +9,16 @@ import Foundation
 
 @Observable
 class Coordinator {
-    let user = User()
+    let user = Users()
     var appState: AppState = .unauthorized
+    
+    init() {
+        if let currenUser = AuthService.currentUser {
+            if currenUser.uid == "" {
+                appState = .authorized(userID: currenUser.uid)
+            }
+        } else {
+            appState = .unauthorized
+        }
+    }
 }

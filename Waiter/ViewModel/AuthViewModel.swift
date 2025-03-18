@@ -10,7 +10,8 @@ import SwiftUI
 
 @Observable
 final class AuthViewModel {
-    var user = User()
+    var profile: Profile = .init(name: "", phone: "", role: .admin)
+    var user = Users()
     var messageError: MyError?
     private let numberSuccses = "1234"
     private let pinSuccses = "1234"
@@ -26,13 +27,13 @@ final class AuthViewModel {
     
     func checkPin(pin: String) throws {
         guard !pin.isEmpty else { throw MyError.emptyField }
-        guard pin == pinSuccses else { throw MyError.invalidPin }
+        guard pin == pinSuccses else { throw MyError.invalidName }
         showOrders = false
     }
 
     func logOut() {
-        user.number = ""
-        user.pin = ""
+        user.name = ""
+        user.phone = ""
         
         withAnimation { showOrders = false }
     }

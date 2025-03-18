@@ -22,13 +22,13 @@ struct AuthView: View {
                 .frame(width: 280, height: 1, alignment: .center)
                 .background(.white)
             TextAuthCustom(text: R.Auth.subtitle, isFont: true)
-                .padding(.bottom, 30)
-            
-            
-            
-            RoundedTextField(text: $viewModel.profile.name, placeholder: "Введите имя")
-            RoundedTextField(text: $viewModel.profile.phone, placeholder: "Введите номер телефона")
-            
+                .padding(.bottom)
+                CustomDropdown()
+            if isShow {
+                RoundedTextField(text: $viewModel.profile.name, placeholder: "Введите имя")
+                RoundedTextField(text: $viewModel.profile.phone, placeholder: "Введите номер телефона")
+            }
+
             RoundedButton(text: isShow ? R.Auth.buttonEnter : R.Auth.buttonNext) {
                 switch viewModel.isAuth {
                 case true:
