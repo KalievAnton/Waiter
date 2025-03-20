@@ -14,7 +14,7 @@ actor FirestoreService {
     static var profilesRef: CollectionReference { database.collection("profiles") }
     
     static func createProfile(user: User) async throws -> Profile {
-        let profile = Profile(id: user.uid, name: "", phone: user.phoneNumber!, role: .admin)
+        let profile = Profile(id: user.uid, name: "", email: user.email!, role: .admin)
         try await profilesRef.document(user.uid).setData(profile.representation)
         return profile
     }

@@ -15,39 +15,34 @@ struct CustomDropdown: View {
         VStack(spacing: 20) {
             HStack {
                 Text(role?.label ?? "Выберите тип профиля")
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
                 Spacer()
-                
                 Image(systemName: "arrowtriangle.left.fill")
-                    .rotationEffect(.degrees(show ? 90 : 0))
+                    .foregroundStyle(.green)
+                    .rotationEffect(.degrees(show ? -90 : 0))
             }
-            .font(Font.custom(.mediumMontserrat, size: 16))
+            .font(Font.custom(.boldMontserrat, size: 16))
             .padding(.horizontal)
             .foregroundStyle(.black)
             .background {
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(height: 50)
-                    .foregroundStyle(.white)
+                    .frame(height: 49)
+                    .foregroundStyle(.clear)
             }
             .onTapGesture {
                 show.toggle()
             }
             if show {
-                ScrollView {
-                    VStack(spacing: 18) {
+                    VStack(spacing: 10) {
                         ForEach(Role.allCases, id: \.self) { role in
-                            if role != Role.allCases.first {
-                                Rectangle()
-                                    .frame(height: 1)
-                                    .foregroundStyle(.black)
-                            }
+
                             Button {
                                 withAnimation {
                                     self.role = role
                                     show.toggle()
                                 }
                             } label: {
-                                Text(role.label).foregroundStyle(.black)
+                                Text(role.label).foregroundStyle(.white)
                                     .font(Font.custom(.mediumMontserrat, size: 16))
                                 Spacer()
                             }
@@ -55,15 +50,15 @@ struct CustomDropdown: View {
                         .padding(.horizontal)
                     }
                     .padding(.vertical, 15)
-                }
-                .frame(height: show ? 230 : 50)
-                .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.white)
-                }
+                .frame(height: show ? 130 : 49)
+//                .background {
+//                    RoundedRectangle(cornerRadius: 10)
+//                        .fill(.clear)
+//                }
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 1)
+                        .fill(.clear)
+                        .stroke(Color.white, lineWidth: 1)
                 }
                 .onTapGesture {
                     withAnimation {

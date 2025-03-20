@@ -17,3 +17,4 @@ struct TxtTableCell: ViewModifier {
             .padding(isPadding ? 12 : 0)
     }
 }
+

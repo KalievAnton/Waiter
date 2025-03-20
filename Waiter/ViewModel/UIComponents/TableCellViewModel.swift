@@ -21,3 +21,4 @@ class TableCellViewModel {
         self.table = table
     }
 }
+

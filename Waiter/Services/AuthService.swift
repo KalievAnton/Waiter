@@ -9,23 +9,18 @@ import Foundation
 import FirebaseAuth
 
 actor AuthService {
-    static var authPhone = PhoneAuthProvider.provider()
     static let auth = Auth.auth()
     static var currentUser: User? { auth.currentUser }
     
-    static func sendCode(phoneNumber: String) async throws {
-        let verification = try await authPhone.verifyPhoneNumber(phoneNumber, uiDelegate: nil)
-       
+    static func createUser(email: String, password: String) async throws -> Profile {
+        let result = try await auth.createUser(withEmail: email, password: password)
+        let user = result.user
+        let profile = try await FirestoreService.createProfile(user: user)
+        return profile
     }
-//    static func createUser(name: String, phone: String) async throws -> Profile {
-//        let result = try await auth.credential(withVerificationID: "", verificationCode: "")
-//        let user = result.user
-//        let profile = try await FirestoreService.createProfile(user: user)
-//        return profile
-//    }
     
-    static func signIn(name: String, phone: String) async throws -> Profile {
-        let result = try await auth.signIn(withEmail: name, password: phone)
+    static func signIn(email: String, password: String) async throws -> Profile {
+        let result = try await auth.signIn(withEmail: email, password: password)
         let user = result.user
         let profile = try await FirestoreService.fetchProfile(id: user.uid)
         return profile

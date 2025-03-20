@@ -175,6 +175,7 @@
 				E2EB16572D14221A00FD4F17 /* WaiterApp.swift */,
 				E24FA4D92D1AB0A300F2C93C /* Extensions */,
 				E2EB165E2D14224800FD4F17 /* Model */,
+				E2EB165D2D14223300FD4F17 /* View */,
 				E2EB165F2D14224E00FD4F17 /* ViewModel */,
 				52CDEAB42D8466E600FD7BDD /* Services */,
 				E2EB16822D14252100FD4F17 /* Error */,
@@ -204,7 +205,6 @@
 				E2EB16642D1422D600FD4F17 /* Dish.swift */,
 				E2EB16662D1422DD00FD4F17 /* Table.swift */,
 				523F01932D81C9060011A846 /* Profile.swift */,
-				E2EB165D2D14223300FD4F17 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";

@@ -10,13 +10,13 @@ import Foundation
 class Profile: Identifiable {
     let id: String
     var name: String
-    var phone: String
+    var email: String
     let role: Role
     
-    init(id: String = UUID().uuidString, name: String, phone: String, role: Role) {
+    init(id: String = UUID().uuidString, name: String, email: String, role: Role) {
         self.id = id
         self.name = name
-        self.phone = phone
+        self.email = email
         self.role = role
     }
 }
@@ -41,7 +41,7 @@ extension Profile {
     var representation: [String: Any] {
         ["id": id,
          "name": name,
-         "phone": phone,
+         "email": email,
          "role": role.rawValue]
     }
 }
@@ -50,10 +50,10 @@ extension Profile {
     convenience init?(_ data: [String: Any]) {
         guard let id = data["id"] as? String,
               let name = data["name"] as? String,
-              let phone = data["phone"] as? String,
+              let email = data["email"] as? String,
               let roleString = data["role"] as? String else { return nil }
         
         guard let role = Role(rawValue: roleString) else { return nil }
-        self.init(id: id, name: name, phone: phone, role: role)
+        self.init(id: id, name: name, email: email, role: role)
     }
 }
