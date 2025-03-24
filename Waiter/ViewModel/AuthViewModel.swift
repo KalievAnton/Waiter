@@ -10,28 +10,41 @@ import SwiftUI
 
 @Observable
 final class AuthViewModel {
-//    var profile: Profile = .init(name: "", phone: "", role: .admin)
+    var profile: Profile?
     var role: Role?
-    var name: String = ""
-    var phone: String = ""
+    var email: String = ""
+    var password: String = ""
     var messageError: MyError?
-    private let pinSuccses = "1234"
     var isAuth = false
-    var showOrders = false
     weak var coordinator: Coordinator?
     
-    func checkNumber(number: String) throws {
-        guard !number.isEmpty else { throw MyError.emptyField }
-        guard number.count == 11 else { throw MyError.invalidNumber }
-        for char in number {
-            guard char.isNumber else { throw MyError.invalidNumber }
+    func login() async throws -> Profile {
+        return try await AuthService.signIn(email: email, password: password)
+    }
+    
+    func registrationСheck() throws {
+        guard !email.isEmpty && !password.isEmpty else { throw MyError.emptyField }
+    }
+    
+    func handleAuthFlow(adminID: String) async {
+        do {
+            try registrationСheck()
+            let profile = try await login()
+            
+            await MainActor.run {
+                self.profile = profile
+                if profile.id == adminID {
+                    coordinator?.appState = .adminpanel
+                } else {
+                    coordinator?.appState = .authorized(userID: profile.id)
+                }
+            }
+        } catch {
+            await MainActor.run {
+                if let error = error as? MyError {
+                    self.messageError = error
+                }
+            }
         }
     }
-    
-    func checkPin(pin: String) throws {
-        guard !pin.isEmpty else { throw MyError.emptyField }
-        guard pin == pinSuccses else { throw MyError.invalidName }
-        showOrders = false
-    }
-    
 }

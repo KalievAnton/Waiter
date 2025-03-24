@@ -10,22 +10,48 @@ import SwiftUI
 struct RoundedTextField: View {
     @Binding var text: String
     let placeholder: String
+    var hasEye: Bool = false
+    @State var isSecure: Bool
     
-    init(text: Binding<String>, placeholder: String) {
-       _text = text
+    init(text: Binding<String>, placeholder: String, hasEye: Bool) {
+        _text = text
         self.placeholder = placeholder
+        self.hasEye = hasEye
+        self.isSecure = hasEye
     }
     
     var body: some View {
-        TextField(placeholder, text: $text)
-            .padding(10)
+        HStack {
+            if hasEye {
+                HStack {
+                    if isSecure {
+                        SecureField(placeholder, text: $text)
+                            .frame(height: 50)
+                    } else {
+                        TextField(placeholder, text: $text)
+                            .frame(height: 50)
+                    }
+                }
+                .overlay(alignment: .trailing) {
+                    Button {
+                        isSecure.toggle()
+                    } label: {
+                        Image(systemName: isSecure ?  "eye" : "eye.slash")
+                            .foregroundStyle(.black)
+                    }
+                }
+            } else {
+                TextField(placeholder, text: $text)
+                    .frame(height: 50)
+            }
+        }
+        .padding(.horizontal, 20)
             .font(Font.custom(.regularMontserrat, size: 16))
-            .frame(height: 50)
-            .multilineTextAlignment(.center)
-            .background(ignoresSafeAreaEdges: .all)
+            .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
+
 #Preview {
-    RoundedTextField(text: .constant("Номер телефона"), placeholder: "")
+    RoundedTextField(text: .constant("Пароль от почты"), placeholder: "", hasEye: true)
 }

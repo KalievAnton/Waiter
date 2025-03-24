@@ -24,5 +24,5 @@ struct WaiterApp: App {
         WindowGroup {
             RouteView()
         }
-    }
+    } 
 }

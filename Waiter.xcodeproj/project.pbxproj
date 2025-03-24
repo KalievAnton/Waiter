@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5207C8E32D8F1D3C005EAE95 /* MainAdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */; };
+		5207C8E52D8F1D5E005EAE95 /* MainAdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */; };
 		523F018E2D81C1F50011A846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523F018D2D81C1F50011A846 /* GoogleService-Info.plist */; };
 		523F01922D81C45B0011A846 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 523F01912D81C45B0011A846 /* FirebaseCore */; };
 		523F01942D81C9070011A846 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F01932D81C9060011A846 /* Profile.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdminView.swift; sourceTree = "<group>"; };
+		5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdminViewModel.swift; sourceTree = "<group>"; };
 		523F018D2D81C1F50011A846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		523F01932D81C9060011A846 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		523F01952D81D7F40011A846 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -105,6 +109,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5207C8DD2D8F1CF3005EAE95 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				5207C8DE2D8F1D07005EAE95 /* View */,
+				5207C8DF2D8F1D0C005EAE95 /* ViewModel */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		5207C8DE2D8F1D07005EAE95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5207C8DF2D8F1D0C005EAE95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		523F01902D81C45B0011A846 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +204,7 @@
 				E2EB16572D14221A00FD4F17 /* WaiterApp.swift */,
 				E24FA4D92D1AB0A300F2C93C /* Extensions */,
 				E2EB165E2D14224800FD4F17 /* Model */,
+				5207C8DD2D8F1CF3005EAE95 /* Admin */,
 				E2EB165D2D14223300FD4F17 /* View */,
 				E2EB165F2D14224E00FD4F17 /* ViewModel */,
 				52CDEAB42D8466E600FD7BDD /* Services */,
@@ -350,6 +380,7 @@
 				E2EB16812D14251000FD4F17 /* DishCellViewModel.swift in Sources */,
 				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */,
+				5207C8E52D8F1D5E005EAE95 /* MainAdminViewModel.swift in Sources */,
 				E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */,
 				E2EB16732D14243F00FD4F17 /* Coordinator.swift in Sources */,
 				524B70552D831300008C0356 /* RoundedTextField.swift in Sources */,
@@ -360,6 +391,7 @@
 				E2EB165C2D14221A00FD4F17 /* WaiterApp.swift in Sources */,
 				E2EB167D2D1424D900FD4F17 /* TableDetailViewModel.swift in Sources */,
 				E2EB16752D14246100FD4F17 /* AuthViewModel.swift in Sources */,
+				5207C8E32D8F1D3C005EAE95 /* MainAdminView.swift in Sources */,
 				E2EB16712D14238A00FD4F17 /* DishCell.swift in Sources */,
 				E24FA4E12D1AB8B300F2C93C /* CustomView + Ext.swift in Sources */,
 				E2EB166D2D14235A00FD4F17 /* TableDetailView.swift in Sources */,

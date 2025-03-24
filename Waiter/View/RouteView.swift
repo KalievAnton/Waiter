@@ -12,14 +12,18 @@ struct RouteView: View {
     
     var body: some View {
         switch coordinator.appState {
+        case .unauthorized:
+            AuthView(coordinator: $coordinator)
         case .authorized(let userID):
             NavigationStack {
                 TableView(coordinator: $coordinator,
                           viewModel: .init(userID: userID))
                     .navigationTitle("Столы")
             }
-        case .unauthorized:
-            AuthView(coordinator: $coordinator)
+        case .adminpanel:
+            NavigationStack {
+                MainAdminView(coordinator: .init())
+            }
         }
     }
 }
@@ -27,6 +31,7 @@ struct RouteView: View {
 enum AppState {
     case authorized(userID: String)
     case unauthorized
+    case adminpanel
 }
 
 #Preview {
