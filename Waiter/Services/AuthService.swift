@@ -20,10 +20,14 @@ actor AuthService {
     }
     
     static func signIn(email: String, password: String) async throws -> Profile {
-        let result = try await auth.signIn(withEmail: email, password: password)
-        let user = result.user
-        let profile = try await FirestoreService.fetchProfile(id: user.uid)
-        return profile
+        do {
+            let result = try await auth.signIn(withEmail: email, password: password)
+            let user = result.user
+            let profile = try await FirestoreService.fetchProfile(id: user.uid)
+            return profile
+        } catch {
+            throw error
+        }
     }
     
     static func signOut() async -> Bool {

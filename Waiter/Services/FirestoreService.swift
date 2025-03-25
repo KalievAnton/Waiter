@@ -25,4 +25,12 @@ actor FirestoreService {
         guard let profile = Profile(data) else { throw MyError.invalidDataInSnapshot }
         return profile
     }
+    
+    static func fetchProfiles() async throws -> [Profile] {
+        let snapshot = try await profilesRef.getDocuments()
+        let data = snapshot.documents
+        return data
+            .compactMap { Profile($0.data()) }
+            .sorted { $0.name < $1.name }
+    }
 }

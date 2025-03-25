@@ -12,7 +12,6 @@ struct AuthView: View {
     @State private var viewModel = AuthViewModel()
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -35,16 +34,13 @@ struct AuthView: View {
                 switch viewModel.isAuth {
                 case true:
                     viewModel.coordinator = coordinator
-                    Task {
-                        await viewModel.handleAuthFlow(adminID: coordinator.adminID)
-                        showAlert = viewModel.messageError != nil
-                    }
+                    viewModel.login()
                 case false:
                     if viewModel.role != nil {
                         viewModel.isAuth = true
                     } else {
-                        viewModel.messageError = .invalidRole
-                        showAlert = true
+                        viewModel.messageError = MyError.invalidRole.localizedDescription
+                        viewModel.showAlert = true
                         if let profile = viewModel.profile {
                             coordinator.appState = .adminpanel
                             coordinator.appState = .authorized(userID: profile.id)
@@ -60,11 +56,12 @@ struct AuthView: View {
             Color.primary.ignoresSafeArea()
         }
         .animation(.bouncy, value: viewModel.isAuth)
-        .alert(viewModel.messageError?.localizedDescription ?? "", isPresented: $showAlert) {
+        .alert(viewModel.messageError ?? "", isPresented: $viewModel.showAlert) {
             Button("OK") { }
-        } message: {
-            Text(viewModel.messageError?.failureReason ?? "")
         }
+//        message: {
+//            Text((viewModel.messageError as? MyError)?.failureReason ?? "")
+//        }
     }
 }
 

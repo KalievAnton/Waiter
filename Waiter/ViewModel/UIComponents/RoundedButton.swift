@@ -22,6 +22,7 @@ struct RoundedButton: View {
                 .font(isBold ? Font.custom(.mediumMontserrat, size: 17) : Font.custom(.boldMontserrat, size: 17))
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
+                .padding(.horizontal)
                 .background {
                     isBold ? Color.buttonColor : Color.clear
                 }

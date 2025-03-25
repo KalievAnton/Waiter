@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5207C8E32D8F1D3C005EAE95 /* MainAdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */; };
-		5207C8E52D8F1D5E005EAE95 /* MainAdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */; };
+		5207C8E32D8F1D3C005EAE95 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */; };
+		5207C8E52D8F1D5E005EAE95 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */; };
 		523F018E2D81C1F50011A846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523F018D2D81C1F50011A846 /* GoogleService-Info.plist */; };
 		523F01922D81C45B0011A846 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 523F01912D81C45B0011A846 /* FirebaseCore */; };
 		523F01942D81C9070011A846 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F01932D81C9060011A846 /* Profile.swift */; };
@@ -23,6 +23,7 @@
 		52CDEABC2D846A6500FD7BDD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 52CDEABB2D846A6500FD7BDD /* FirebaseFirestore */; };
 		52FA47512D808AD40024CDC8 /* Color + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA47502D808AD40024CDC8 /* Color + ext.swift */; };
 		52FA47532D808C450024CDC8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */; };
+		B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65760EE2D92BB2100F4EB60 /* TableListView.swift */; };
 		E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4DA2D1AB15300F2C93C /* TFBottomTotalTable.swift */; };
 		E24FA4E12D1AB8B300F2C93C /* CustomView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4E02D1AB8B300F2C93C /* CustomView + Ext.swift */; };
 		E24FA4E32D1ABE7900F2C93C /* TxtTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4E22D1ABE7900F2C93C /* TxtTableCell.swift */; };
@@ -52,8 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdminView.swift; sourceTree = "<group>"; };
-		5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdminViewModel.swift; sourceTree = "<group>"; };
+		5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
+		5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		523F018D2D81C1F50011A846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		523F01932D81C9060011A846 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		523F01952D81D7F40011A846 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		52FA47502D808AD40024CDC8 /* Color + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + ext.swift"; sourceTree = "<group>"; };
 		52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		B65760EE2D92BB2100F4EB60 /* TableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListView.swift; sourceTree = "<group>"; };
 		E24FA4D82D1A9B8300F2C93C /* Waiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24FA4DA2D1AB15300F2C93C /* TFBottomTotalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFBottomTotalTable.swift; sourceTree = "<group>"; };
 		E24FA4E02D1AB8B300F2C93C /* CustomView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomView + Ext.swift"; sourceTree = "<group>"; };
@@ -121,7 +123,8 @@
 		5207C8DE2D8F1D07005EAE95 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5207C8E22D8F1D3C005EAE95 /* MainAdminView.swift */,
+				5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */,
+				B65760EE2D92BB2100F4EB60 /* TableListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +132,7 @@
 		5207C8DF2D8F1D0C005EAE95 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5207C8E42D8F1D5E005EAE95 /* MainAdminViewModel.swift */,
+				5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -374,13 +377,14 @@
 				523F019A2D81EEF80011A846 /* TextAuthCustom.swift in Sources */,
 				E24FA4E52D1AC02200F2C93C /* FontDishCell.swift in Sources */,
 				524B70572D832D39008C0356 /* CustomDropdown.swift in Sources */,
+				B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */,
 				E2EB16692D14232F00FD4F17 /* AuthView.swift in Sources */,
 				E2EB166B2D14233F00FD4F17 /* TableView.swift in Sources */,
 				E2EB16652D1422D600FD4F17 /* Dish.swift in Sources */,
 				E2EB16812D14251000FD4F17 /* DishCellViewModel.swift in Sources */,
 				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */,
-				5207C8E52D8F1D5E005EAE95 /* MainAdminViewModel.swift in Sources */,
+				5207C8E52D8F1D5E005EAE95 /* EmployeeListViewModel.swift in Sources */,
 				E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */,
 				E2EB16732D14243F00FD4F17 /* Coordinator.swift in Sources */,
 				524B70552D831300008C0356 /* RoundedTextField.swift in Sources */,
@@ -391,7 +395,7 @@
 				E2EB165C2D14221A00FD4F17 /* WaiterApp.swift in Sources */,
 				E2EB167D2D1424D900FD4F17 /* TableDetailViewModel.swift in Sources */,
 				E2EB16752D14246100FD4F17 /* AuthViewModel.swift in Sources */,
-				5207C8E32D8F1D3C005EAE95 /* MainAdminView.swift in Sources */,
+				5207C8E32D8F1D3C005EAE95 /* EmployeeListView.swift in Sources */,
 				E2EB16712D14238A00FD4F17 /* DishCell.swift in Sources */,
 				E24FA4E12D1AB8B300F2C93C /* CustomView + Ext.swift in Sources */,
 				E2EB166D2D14235A00FD4F17 /* TableDetailView.swift in Sources */,
