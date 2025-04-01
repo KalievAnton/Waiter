@@ -10,7 +10,7 @@ import Foundation
 
 @Observable
 final class EmployeeListViewModel {
-    var profiles = [Profile]()
+    var profiles: [Profile] = []
     
     func signOut() async -> Bool {
         await AuthService.signOut()

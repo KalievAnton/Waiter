@@ -17,6 +17,8 @@
 		523F019C2D81F27E0011A846 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F019B2D81F27E0011A846 /* Resourses.swift */; };
 		524B70552D831300008C0356 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B70542D831300008C0356 /* RoundedTextField.swift */; };
 		524B70572D832D39008C0356 /* CustomDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B70562D832D39008C0356 /* CustomDropdown.swift */; };
+		529DE6352D996A1C008D20C2 /* StaffRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DE6342D996A1C008D20C2 /* StaffRegistrationView.swift */; };
+		529DE6372D996A5C008D20C2 /* StaffRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */; };
 		52CDEAB62D84670B00FD7BDD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CDEAB52D84670B00FD7BDD /* AuthService.swift */; };
 		52CDEAB82D84676B00FD7BDD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 52CDEAB72D84676B00FD7BDD /* FirebaseAuth */; };
 		52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */; };
@@ -62,6 +64,8 @@
 		523F019B2D81F27E0011A846 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		524B70542D831300008C0356 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		524B70562D832D39008C0356 /* CustomDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropdown.swift; sourceTree = "<group>"; };
+		529DE6342D996A1C008D20C2 /* StaffRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffRegistrationView.swift; sourceTree = "<group>"; };
+		529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffRegistrationViewModel.swift; sourceTree = "<group>"; };
 		52CDEAB52D84670B00FD7BDD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		52FA47502D808AD40024CDC8 /* Color + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + ext.swift"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */,
 				B65760EE2D92BB2100F4EB60 /* TableListView.swift */,
+				529DE6332D9969D0008D20C2 /* RegistrationView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */,
+				529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		529DE6332D9969D0008D20C2 /* RegistrationView */ = {
+			isa = PBXGroup;
+			children = (
+				529DE6342D996A1C008D20C2 /* StaffRegistrationView.swift */,
+			);
+			path = RegistrationView;
 			sourceTree = "<group>";
 		};
 		52CDEAB42D8466E600FD7BDD /* Services */ = {
@@ -371,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2EB166F2D14237E00FD4F17 /* TableCell.swift in Sources */,
+				529DE6372D996A5C008D20C2 /* StaffRegistrationViewModel.swift in Sources */,
 				E2EB165B2D14221A00FD4F17 /* RouteView.swift in Sources */,
 				523F01942D81C9070011A846 /* Profile.swift in Sources */,
 				E2EB16672D1422DD00FD4F17 /* Table.swift in Sources */,
@@ -381,6 +396,7 @@
 				E2EB16692D14232F00FD4F17 /* AuthView.swift in Sources */,
 				E2EB166B2D14233F00FD4F17 /* TableView.swift in Sources */,
 				E2EB16652D1422D600FD4F17 /* Dish.swift in Sources */,
+				529DE6352D996A1C008D20C2 /* StaffRegistrationView.swift in Sources */,
 				E2EB16812D14251000FD4F17 /* DishCellViewModel.swift in Sources */,
 				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */,

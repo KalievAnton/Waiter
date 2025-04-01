@@ -14,7 +14,7 @@ final class AuthViewModel {
     var role: Role?
     var email: String = ""
     var password: String = ""
-    var messageError: String?
+    var messageErrorLocalizedDescription: String?
     var isAuth = false
     weak var coordinator: Coordinator?
     var showAlert = false
@@ -36,13 +36,13 @@ final class AuthViewModel {
             } catch let error {
                 await MainActor.run {
                     if let myError = error as? MyError {
-                        self.messageError = myError.localizedDescription
+                        self.messageErrorLocalizedDescription = myError.localizedDescription
                     } else if error.localizedDescription.contains("The email address is badly formatted") {
-                        self.messageError = "Email имеет неверный формат"
+                        self.messageErrorLocalizedDescription = "Email имеет неверный формат"
                     } else if error.localizedDescription.contains("The supplied auth credential is malformed or has expired") {
-                        self.messageError = "Неверный email или пароль"
+                        self.messageErrorLocalizedDescription = "Неверный email или пароль"
                     } else {
-                        self.messageError = "Неизвестная ошибка"
+                        self.messageErrorLocalizedDescription = "Неизвестная ошибка"
                     }
                     showAlert = true
                 }

@@ -30,7 +30,7 @@ struct AuthView: View {
                 RoundedTextField(text: $viewModel.email, placeholder: "Введите почту", hasEye: false)
                 RoundedTextField(text: $viewModel.password, placeholder: "Введите пароль", hasEye: true)
             }
-            RoundedButton(text: viewModel.isAuth  ? R.Auth.buttonEnter : R.Auth.buttonNext) {
+            RoundedButton(text: viewModel.isAuth ? R.Auth.buttonEnter : R.Auth.buttonNext) {
                 switch viewModel.isAuth {
                 case true:
                     viewModel.coordinator = coordinator
@@ -39,7 +39,7 @@ struct AuthView: View {
                     if viewModel.role != nil {
                         viewModel.isAuth = true
                     } else {
-                        viewModel.messageError = MyError.invalidRole.localizedDescription
+                        viewModel.messageErrorLocalizedDescription = MyError.invalidRole.localizedDescription
                         viewModel.showAlert = true
                         if let profile = viewModel.profile {
                             coordinator.appState = .adminpanel
@@ -49,19 +49,16 @@ struct AuthView: View {
                 }
             }
         }
-        .padding(.horizontal, 50)
+        .padding(.horizontal, 32)
         .offset(y: -50)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
             Color.primary.ignoresSafeArea()
         }
         .animation(.bouncy, value: viewModel.isAuth)
-        .alert(viewModel.messageError ?? "", isPresented: $viewModel.showAlert) {
+        .alert(viewModel.messageErrorLocalizedDescription ?? "", isPresented: $viewModel.showAlert) {
             Button("OK") { }
         }
-//        message: {
-//            Text((viewModel.messageError as? MyError)?.failureReason ?? "")
-//        }
     }
 }
 

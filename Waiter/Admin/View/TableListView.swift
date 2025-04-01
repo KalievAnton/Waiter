@@ -12,9 +12,9 @@ struct TableListView: View {
         Text("Столы")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Изыди", role: .destructive) {
+                    Button("Выйти", role: .destructive) {
                         
-                    }
+                    } .tint(.red)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "plus") {

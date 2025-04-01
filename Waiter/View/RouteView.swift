@@ -23,7 +23,7 @@ struct RouteView: View {
         case .adminpanel:
                 TabView {
                     NavigationStack { EmployeeListView(coordinator: $coordinator) }
-                    .tabItem { Label("Сотрудники", systemImage: "person.crop.circle") }
+                    .tabItem { Label("Сотрудники", systemImage: "person.2.circle.fill") }
                     NavigationStack { TableListView() }
                     .tabItem { Label("Столы", systemImage: "table.furniture") }
                     NavigationStack { Text("Меню") }
