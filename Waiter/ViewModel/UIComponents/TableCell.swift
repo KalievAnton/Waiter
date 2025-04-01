@@ -16,7 +16,7 @@ struct TableCell: View {
                 Text(viewModel.numberDesciption)
                     .txtTableCellFalseStyle()
                 Group {
-                    if viewModel.isFree {
+                    if viewModel.table.isTable {
                         Text("Свободен")
                             .txtTableCellTrueStyle()
                     } else {
@@ -33,5 +33,5 @@ struct TableCell: View {
 }
 
 #Preview {
-    TableCell(viewModel: .init(table: Table(dishes: [])))
+    TableCell(viewModel: .init(table: Table()))
 }

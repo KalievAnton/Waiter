@@ -8,10 +8,10 @@
 import Foundation
 
 class Profile: Identifiable {
-    let id: String
+    var id: String
     var name: String
     var email: String
-    let role: Role
+    var role: Role
     
     init(id: String = UUID().uuidString, name: String, email: String, role: Role) {
         self.id = id

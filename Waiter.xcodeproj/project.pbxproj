@@ -26,6 +26,11 @@
 		52FA47512D808AD40024CDC8 /* Color + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA47502D808AD40024CDC8 /* Color + ext.swift */; };
 		52FA47532D808C450024CDC8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */; };
 		B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65760EE2D92BB2100F4EB60 /* TableListView.swift */; };
+		B6DC68172D9BE78200A187FD /* OrderPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC68162D9BE78200A187FD /* OrderPosition.swift */; };
+		B6DC68192D9BE83D00A187FD /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC68182D9BE83D00A187FD /* ProductListView.swift */; };
+		B6DC681B2D9BE85A00A187FD /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */; };
+		B6DC681D2D9BE9AC00A187FD /* CreateDishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC681C2D9BE9AC00A187FD /* CreateDishView.swift */; };
+		B6DC681F2D9BE9CE00A187FD /* CreateDishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC681E2D9BE9CE00A187FD /* CreateDishViewModel.swift */; };
 		E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4DA2D1AB15300F2C93C /* TFBottomTotalTable.swift */; };
 		E24FA4E12D1AB8B300F2C93C /* CustomView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4E02D1AB8B300F2C93C /* CustomView + Ext.swift */; };
 		E24FA4E32D1ABE7900F2C93C /* TxtTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FA4E22D1ABE7900F2C93C /* TxtTableCell.swift */; };
@@ -71,6 +76,11 @@
 		52FA47502D808AD40024CDC8 /* Color + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + ext.swift"; sourceTree = "<group>"; };
 		52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		B65760EE2D92BB2100F4EB60 /* TableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListView.swift; sourceTree = "<group>"; };
+		B6DC68162D9BE78200A187FD /* OrderPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPosition.swift; sourceTree = "<group>"; };
+		B6DC68182D9BE83D00A187FD /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		B6DC681C2D9BE9AC00A187FD /* CreateDishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDishView.swift; sourceTree = "<group>"; };
+		B6DC681E2D9BE9CE00A187FD /* CreateDishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDishViewModel.swift; sourceTree = "<group>"; };
 		E24FA4D82D1A9B8300F2C93C /* Waiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24FA4DA2D1AB15300F2C93C /* TFBottomTotalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFBottomTotalTable.swift; sourceTree = "<group>"; };
 		E24FA4E02D1AB8B300F2C93C /* CustomView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomView + Ext.swift"; sourceTree = "<group>"; };
@@ -129,6 +139,8 @@
 			children = (
 				5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */,
 				B65760EE2D92BB2100F4EB60 /* TableListView.swift */,
+				B6DC68182D9BE83D00A187FD /* ProductListView.swift */,
+				B6DC681C2D9BE9AC00A187FD /* CreateDishView.swift */,
 				529DE6332D9969D0008D20C2 /* RegistrationView */,
 			);
 			path = View;
@@ -139,6 +151,8 @@
 			children = (
 				5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */,
 				529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */,
+				B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */,
+				B6DC681E2D9BE9CE00A187FD /* CreateDishViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 			children = (
 				E2EB16622D1422CF00FD4F17 /* Users.swift */,
 				E2EB16642D1422D600FD4F17 /* Dish.swift */,
+				B6DC68162D9BE78200A187FD /* OrderPosition.swift */,
 				E2EB16662D1422DD00FD4F17 /* Table.swift */,
 				523F01932D81C9060011A846 /* Profile.swift */,
 			);
@@ -391,6 +406,7 @@
 				E2EB16672D1422DD00FD4F17 /* Table.swift in Sources */,
 				523F019A2D81EEF80011A846 /* TextAuthCustom.swift in Sources */,
 				E24FA4E52D1AC02200F2C93C /* FontDishCell.swift in Sources */,
+				B6DC68172D9BE78200A187FD /* OrderPosition.swift in Sources */,
 				524B70572D832D39008C0356 /* CustomDropdown.swift in Sources */,
 				B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */,
 				E2EB16692D14232F00FD4F17 /* AuthView.swift in Sources */,
@@ -400,15 +416,19 @@
 				E2EB16812D14251000FD4F17 /* DishCellViewModel.swift in Sources */,
 				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */,
+				B6DC68192D9BE83D00A187FD /* ProductListView.swift in Sources */,
 				5207C8E52D8F1D5E005EAE95 /* EmployeeListViewModel.swift in Sources */,
 				E24FA4DB2D1AB15300F2C93C /* TFBottomTotalTable.swift in Sources */,
+				B6DC681B2D9BE85A00A187FD /* ProductListViewModel.swift in Sources */,
 				E2EB16732D14243F00FD4F17 /* Coordinator.swift in Sources */,
+				B6DC681D2D9BE9AC00A187FD /* CreateDishView.swift in Sources */,
 				524B70552D831300008C0356 /* RoundedTextField.swift in Sources */,
 				523F01962D81D7F40011A846 /* RoundedButton.swift in Sources */,
 				E2EB167F2D1424FD00FD4F17 /* TableCellViewModel.swift in Sources */,
 				E24FA4E32D1ABE7900F2C93C /* TxtTableCell.swift in Sources */,
 				E2EB16842D14253100FD4F17 /* Error.swift in Sources */,
 				E2EB165C2D14221A00FD4F17 /* WaiterApp.swift in Sources */,
+				B6DC681F2D9BE9CE00A187FD /* CreateDishViewModel.swift in Sources */,
 				E2EB167D2D1424D900FD4F17 /* TableDetailViewModel.swift in Sources */,
 				E2EB16752D14246100FD4F17 /* AuthViewModel.swift in Sources */,
 				5207C8E32D8F1D3C005EAE95 /* EmployeeListView.swift in Sources */,

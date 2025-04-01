@@ -18,7 +18,7 @@ struct TableDetailView: View {
             ScrollView {
                 LazyVGrid(columns: layout) {
                     ForEach(viewModel.table.dishes) { dish in
-                        DishCell(viewModel: .init(dish: dish))
+//                        DishCell(viewModel: .init(dish: dish))
                     }
                 }
             }

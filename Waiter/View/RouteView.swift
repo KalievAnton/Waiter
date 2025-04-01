@@ -26,7 +26,7 @@ struct RouteView: View {
                     .tabItem { Label("Сотрудники", systemImage: "person.2.circle.fill") }
                     NavigationStack { TableListView() }
                     .tabItem { Label("Столы", systemImage: "table.furniture") }
-                    NavigationStack { Text("Меню") }
+                    NavigationStack { ProductListView() }
                         .tabItem { Label("Меню", systemImage: "menucard") }
                     NavigationStack { Text("Статистика") }
                         .tabItem { Label("Статистика", systemImage: "chart.xyaxis.line") }

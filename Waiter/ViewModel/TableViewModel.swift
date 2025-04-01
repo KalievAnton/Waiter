@@ -10,18 +10,13 @@ import Foundation
 @Observable
 class TableViewModel {
     var profile: Profile?
-    var table: [Table] = [
-        .init(number: 1, isTable: true,guest: 0, dishes: []),
-        .init(number: 2, isTable: false, guest: 3, dishes: []),
-        .init(number: 3, isTable: false, guest: 6, dishes: []),
-        .init(number: 4, isTable: true, guest: 0, dishes: []),
-    ]
+    var table: [Table] = [ ]
     
-    var totalTableDescription: String { "\(total) ₽"}
-    var total: Int {
-       table.reduce(0) { $0 + $1.cash }
-    }
-    
+//    var totalTableDescription: String { "\(total) ₽"}
+//    var total: Int {
+//       table.reduce(0) { $0 + $1.cash }
+//    }
+//    
     init(userID: String) {
         Task {
             //get profile

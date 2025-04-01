@@ -12,6 +12,10 @@ import Foundation
 final class EmployeeListViewModel {
     var profiles: [Profile] = []
     
+    init() {
+        getProfiles()
+    }
+    
     func signOut() async -> Bool {
         await AuthService.signOut()
     }

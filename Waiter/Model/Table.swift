@@ -9,18 +9,12 @@ import Foundation
 
 class Table: Identifiable {
     let id: String = UUID().uuidString
-    var number: Int = 0
-    let isTable: Bool
+    var number: Int
     var guest: Int = 0
-    var dishes: [Dish]
-    var cash: Int {
-        dishes.reduce(0) { $0 + $1.price * $1.amount }
-    }
+    var dishes: [Dish] = []
+    var isTable: Bool { guest == 0 }
     
-   init(number: Int = 0, isTable: Bool = true, guest: Int = 0, dishes: [Dish] = []) {
+   init(number: Int = 0) {
         self.number = number
-        self.isTable = isTable
-        self.guest = guest
-        self.dishes = dishes
-    }
+   }
 }

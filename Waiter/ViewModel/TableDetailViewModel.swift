@@ -13,9 +13,7 @@ class TableDetailViewModel {
     var table: Table
     var searchText: String = ""
     var totalDishDescription: String { "\(total) ₽" }
-    var total: Int {
-        table.dishes.reduce(0) { $0 + $1.amount * $1.price }
-    }
+    var total: Int { 0 }
     
     init(table: Table) {
         self.table = table

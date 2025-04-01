@@ -10,6 +10,7 @@ import SwiftUI
 struct EmployeeListView: View {
     @State var viewModel: EmployeeListViewModel = .init()
     @Binding var coordinator: Coordinator
+    @State var showStaffRegView = false
     
     var body: some View {
         List(viewModel.profiles) { profile in
@@ -31,9 +32,12 @@ struct EmployeeListView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button("", systemImage: "plus") {
-                    //TODO: Добавить нового сотрудника
+                    showStaffRegView = true
                 }
             }
+        }
+        .sheet(isPresented: $showStaffRegView) {
+            StaffRegistrationView(viewModel: .init())
         }
     }
 }

@@ -32,13 +32,22 @@ struct TableView: View {
                 Text("ИТОГО:")
                     .tfBottomTotalTableStyle().padding(.leading, 16)
                 Spacer()
-                Text(viewModel.totalTableDescription)
+                Text("Итоговая сумма")
                     .tfBottomTotalTableStyle().padding(.trailing, 16)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
             Color.primary.ignoresSafeArea()
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Выйти") {
+                    Task {
+                        await AuthService.signOut()
+                    }
+                }
+            }
         }
     }
 }

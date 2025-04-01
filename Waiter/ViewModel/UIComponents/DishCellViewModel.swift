@@ -9,13 +9,13 @@ import Foundation
 
 @Observable
 class DishCellViewModel {
-    var dish: Dish
-    var priceDescription: String { "\(dish.price) ₽" }
-    var amountDescription: String { "\(dish.amount) шт" }
-    var sumDishes: Int { dish.amount * dish.price }
+    var position: OrderPosition
+    var priceDescription: String { "\(position.price) ₽" }
+    var amountDescription: String { "\(position.count) шт" }
+    var sumDishes: Int { position.count * position.price }
     var sumDescription: String { "\(sumDishes) ₽" }
     
-    init(dish: Dish) {
-        self.dish = dish
+    init(position: OrderPosition) {
+        self.position = position
     }
 }

@@ -12,7 +12,7 @@ struct DishCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(viewModel.dish.title)
+            Text(viewModel.position.productID)
                 .fontDishCellFalseStyle()
             HStack(spacing: 100) {
                 Text(viewModel.priceDescription)
@@ -31,6 +31,6 @@ struct DishCell: View {
     }
 }
 
-#Preview {
-    DishCell(viewModel: .init(dish: Dish.mockData[2]))
-}
+//#Preview {
+//    DishCell(viewModel: .init(dish: Dish.mockData[2]))
+//}
