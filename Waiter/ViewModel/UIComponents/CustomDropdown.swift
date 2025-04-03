@@ -51,10 +51,6 @@ struct CustomDropdown: View {
                     }
                     .padding(.vertical, 15)
                 .frame(height: show ? 130 : 49)
-//                .background {
-//                    RoundedRectangle(cornerRadius: 10)
-//                        .fill(.clear)
-//                }
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(.clear)

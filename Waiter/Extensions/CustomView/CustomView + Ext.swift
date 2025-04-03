@@ -14,4 +14,5 @@ extension View {
     func txtTableCellTotalStyle() -> some View { modifier(TxtTableCell(isPadding: false, isFont: true)) }
     func fontDishCellTrueStyle() -> some View { modifier(FontDishCell(isFont: true)) }
     func fontDishCellFalseStyle() -> some View { modifier(FontDishCell(isFont: false)) }
+    func txtCreateDishStyle() -> some View { modifier(TxtCreateDish()) }
 }

@@ -13,3 +13,25 @@ struct OrderPosition: Identifiable {
     let price: Int
     var count: Int
 }
+
+extension OrderPosition {
+    var representation: [String : Any] {
+        [
+            "id": id,
+            "productID": productID,
+            "price": price,
+            "count": count
+        ]
+    }
+}
+
+extension OrderPosition {
+    init?(_ data: [String : Any]) {
+        guard let id = data["id"] as? String,
+              let productID = data["productID"] as? String,
+              let price = data["price"] as? Int,
+              let count = data["count"] as? Int else { return nil }
+        
+        self.init(productID: productID, price: price, count: count)
+    }
+}

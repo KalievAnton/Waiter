@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5207C8E32D8F1D3C005EAE95 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */; };
 		5207C8E52D8F1D5E005EAE95 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */; };
+		522851722D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851712D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift */; };
+		522851742D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851732D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift */; };
+		522851762D9D45AD00EBD9D5 /* TxtCreateDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851752D9D45AD00EBD9D5 /* TxtCreateDish.swift */; };
 		523F018E2D81C1F50011A846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523F018D2D81C1F50011A846 /* GoogleService-Info.plist */; };
 		523F01922D81C45B0011A846 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 523F01912D81C45B0011A846 /* FirebaseCore */; };
 		523F01942D81C9070011A846 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F01932D81C9060011A846 /* Profile.swift */; };
@@ -62,6 +65,9 @@
 /* Begin PBXFileReference section */
 		5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		522851712D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldPrice.swift; sourceTree = "<group>"; };
+		522851732D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldDesription.swift; sourceTree = "<group>"; };
+		522851752D9D45AD00EBD9D5 /* TxtCreateDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtCreateDish.swift; sourceTree = "<group>"; };
 		523F018D2D81C1F50011A846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		523F01932D81C9060011A846 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		523F01952D81D7F40011A846 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				E2F0DCE12D26BE6C00FFEF62 /* Fonts + Ext.swift */,
 				E24FA4DA2D1AB15300F2C93C /* TFBottomTotalTable.swift */,
 				E24FA4E22D1ABE7900F2C93C /* TxtTableCell.swift */,
+				522851752D9D45AD00EBD9D5 /* TxtCreateDish.swift */,
 				E24FA4E42D1AC02200F2C93C /* FontDishCell.swift */,
 				52FA47502D808AD40024CDC8 /* Color + ext.swift */,
 				E24FA4E62D1AC04800F2C93C /* CustomView */,
@@ -292,8 +299,10 @@
 				E2EB16802D14251000FD4F17 /* DishCellViewModel.swift */,
 				523F01992D81EEF80011A846 /* TextAuthCustom.swift */,
 				523F01952D81D7F40011A846 /* RoundedButton.swift */,
-				524B70542D831300008C0356 /* RoundedTextField.swift */,
 				524B70562D832D39008C0356 /* CustomDropdown.swift */,
+				524B70542D831300008C0356 /* RoundedTextField.swift */,
+				522851712D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift */,
+				522851732D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -425,10 +434,13 @@
 				524B70552D831300008C0356 /* RoundedTextField.swift in Sources */,
 				523F01962D81D7F40011A846 /* RoundedButton.swift in Sources */,
 				E2EB167F2D1424FD00FD4F17 /* TableCellViewModel.swift in Sources */,
+				522851762D9D45AD00EBD9D5 /* TxtCreateDish.swift in Sources */,
+				522851742D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift in Sources */,
 				E24FA4E32D1ABE7900F2C93C /* TxtTableCell.swift in Sources */,
 				E2EB16842D14253100FD4F17 /* Error.swift in Sources */,
 				E2EB165C2D14221A00FD4F17 /* WaiterApp.swift in Sources */,
 				B6DC681F2D9BE9CE00A187FD /* CreateDishViewModel.swift in Sources */,
+				522851722D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift in Sources */,
 				E2EB167D2D1424D900FD4F17 /* TableDetailViewModel.swift in Sources */,
 				E2EB16752D14246100FD4F17 /* AuthViewModel.swift in Sources */,
 				5207C8E32D8F1D3C005EAE95 /* EmployeeListView.swift in Sources */,

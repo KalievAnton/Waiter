@@ -9,6 +9,7 @@ import Foundation
 
 @Observable
 class CreateDishViewModel {
+    var dishes: [Dish] = []
     var title: String = ""
     var price: Int?
     var description = ""
@@ -16,6 +17,8 @@ class CreateDishViewModel {
     var category: Category = .salads
     
     func createDish() {
-        
+        Task {
+            try await FirestoreService.setDishes(dishes)
+        }
     }
 }

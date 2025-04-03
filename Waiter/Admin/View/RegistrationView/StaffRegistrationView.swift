@@ -12,7 +12,6 @@ struct StaffRegistrationView: View {
     @State private var password: String = ""
     @State private var confirmPass: String = ""
 
-    
     var body: some View {
         VStack {
             CustomDropdown(role: $viewModel.role)
@@ -35,7 +34,7 @@ struct StaffRegistrationView: View {
         .padding(.horizontal, 32)
         .frame(maxHeight: .infinity)
         .background {
-            Color.primary.ignoresSafeArea()
+            Color.gray.ignoresSafeArea()
         }
     }
     

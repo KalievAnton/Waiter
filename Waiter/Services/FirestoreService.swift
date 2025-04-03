@@ -12,6 +12,7 @@ import FirebaseAuth
 actor FirestoreService {
     static let database = Firestore.firestore()
     static var profilesRef: CollectionReference { database.collection("profiles") }
+    static var dishesRef: CollectionReference { database.collection("dishes") }
     
     @discardableResult
     static func createProfile(_ profile: Profile) async throws -> Profile {
@@ -32,5 +33,21 @@ actor FirestoreService {
         return data
             .compactMap { Profile($0.data()) }
             .sorted { $0.name < $1.name }
+    }
+    
+    static func setDishes(_ dishes: OrderPosition) async throws {
+        try await dishesRef.document(dishes.id).setData(dishes.representation)
+    }
+    
+    static func getAllDishes() async throws -> [Dish] {
+        let allDishesSnapshot = try await dishesRef.getDocuments()
+        let allDishesDocument = allDishesSnapshot.documents
+        let allDishes = allDishesDocument.compactMap { snapshot in
+            let data = snapshot.data()
+            let dishes = Dish(data)
+            return dishes
+        }
+        
+        return allDishes
     }
 }
