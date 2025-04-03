@@ -11,10 +11,14 @@ class Table: Identifiable {
     let id: String = UUID().uuidString
     var number: Int
     var guest: Int = 0
-    var dishes: [Dish] = []
+    var order: Order = Order()
     var isTable: Bool { guest == 0 }
     
-   init(number: Int = 0) {
+    init(number: Int = 0) {
         self.number = number
-   }
+    }
+}
+
+enum Space {
+    
 }

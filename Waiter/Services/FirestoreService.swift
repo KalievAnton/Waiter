@@ -35,8 +35,8 @@ actor FirestoreService {
             .sorted { $0.name < $1.name }
     }
     
-    static func setDishes(_ dishes: OrderPosition) async throws {
-        try await dishesRef.document(dishes.id).setData(dishes.representation)
+    static func setDish(_ dish: Dish) async throws {
+        try await dishesRef.document(dish.id).setData(dish.representation)
     }
     
     static func getAllDishes() async throws -> [Dish] {

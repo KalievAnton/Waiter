@@ -16,7 +16,7 @@ struct TableView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: layout) {
-                    ForEach(viewModel.table) { table in
+                    ForEach(viewModel.tables) { table in
                         NavigationLink {
                             TableDetailView(viewModel: .init(table: table), tableVM: viewModel)
                         } label: {

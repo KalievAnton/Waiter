@@ -21,15 +21,18 @@ struct CreateDishView: View {
                 .font(.custom(.boldMontserrat, size: 32))
                 .padding(.bottom)
                 .foregroundStyle(Color.white)
-            Picker("Категория", selection: $viewModel.category) {
-                ForEach(Category.allCases, id: \.rawValue) {
-                    Text($0.label.uppercased()).tag($0)
+            Picker("Категория", selection: $viewModel.dishCategory) {
+                ForEach(viewModel.categories) { categ in
+                    Text(categ.title.uppercased()).tag(categ)
                 }
             }
+            .tint(.white)
             RoundedTextField(text:  $viewModel.title,
                              placeholder: "Название",
                              hasEye: false)
-            TextField("Цена", value: $viewModel.price, format: .number)
+            TextField("Цена",
+                      value: $viewModel.price,
+                      format: .number)
                 .txtCreateDishStyle()
             RoundedTextField(text:  $viewModel.volume,
                              placeholder: "Объём",
@@ -37,7 +40,7 @@ struct CreateDishView: View {
             TextField("Описание", text: $viewModel.description)
                 .txtCreateDishStyle()
             RoundedButton(text: "Сохранить") {
-            // TODO: Сохранить на главном экране блюдо
+                viewModel.createDish()
             }
         }
             .padding(.horizontal, 32)
@@ -45,13 +48,6 @@ struct CreateDishView: View {
             .background {
                 Color.gray.ignoresSafeArea()
             }
-    }
-    
-    func saveDish() {
-        guard !viewModel.title.isEmpty ||
-                viewModel.price != 0 ||
-                !viewModel.volume.isEmpty ||
-                !viewModel.description.isEmpty else { return }
     }
 }
 

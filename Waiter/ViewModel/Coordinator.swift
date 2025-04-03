@@ -9,7 +9,6 @@ import Foundation
 
 @Observable
 final class Coordinator {
-    let user = Users()
     var appState: AppState = .unauthorized
     let adminID: String = "bm6rxNlHhUXhIUFrXUj6xO7BWeD3"
     

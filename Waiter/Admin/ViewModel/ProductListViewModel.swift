@@ -16,6 +16,11 @@ class ProductListViewModel {
     }
     
     func fetchDishes() {
-        
+        Task {
+            let dishes = try await FirestoreService.getAllDishes()
+            await MainActor.run {
+                self.dishes = dishes
+            }
+        }
     }
 }

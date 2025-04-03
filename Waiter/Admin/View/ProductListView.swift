@@ -10,10 +10,18 @@ import SwiftUI
 struct ProductListView: View {
     @State private var viewModel = ProductListViewModel()
     @State private var showCreateDishView: Bool = false
+    @State private var showCategoryListView: Bool = false
+
     
     var body: some View {
         List(viewModel.dishes) { dish in
-            Text(dish.title)
+            HStack {
+                Text(dish.title).bold()
+                Spacer()
+                Text(dish.volume)
+                    .padding(8)
+                Text("\(dish.price) ₽")
+            }
         }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -21,6 +29,13 @@ struct ProductListView: View {
                         
                     } .tint(.red)
                 }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("", systemImage: "command") {
+                        showCategoryListView.toggle()
+                    }
+                }
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "plus") {
                         showCreateDishView.toggle()
@@ -30,6 +45,9 @@ struct ProductListView: View {
             .navigationTitle("Меню")
             .sheet(isPresented: $showCreateDishView) {
                 CreateDishView()
+            }
+            .sheet(isPresented: $showCategoryListView) {
+                CategoryListView()
             }
     }
 }

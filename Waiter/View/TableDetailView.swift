@@ -17,8 +17,8 @@ struct TableDetailView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: layout) {
-                    ForEach(viewModel.table.dishes) { dish in
-//                        DishCell(viewModel: .init(dish: dish))
+                    ForEach(viewModel.table.order.positions) { position in
+                        DishCell(viewModel: .init(position: position))
                     }
                 }
             }
@@ -36,10 +36,10 @@ struct TableDetailView: View {
         }
         
         .onDisappear {
-            guard let index = tableVM.table.firstIndex (where: { table in
+            guard let index = tableVM.tables.firstIndex (where: { table in
                 viewModel.table.id == table.id
             }) else { return }
-            tableVM.table[index] = viewModel.table
+            tableVM.tables[index] = viewModel.table
         }
         
         .toolbar {

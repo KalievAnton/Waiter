@@ -10,13 +10,13 @@ import Foundation
 @Observable
 class TableViewModel {
     var profile: Profile?
-    var table: [Table] = [ ]
+    var tables: [Table] = [ ]
     
-//    var totalTableDescription: String { "\(total) ₽"}
-//    var total: Int {
-//       table.reduce(0) { $0 + $1.cash }
-//    }
-//    
+    var totalTableDescription: String { "\(total) ₽"}
+    var total: Int {
+        tables.reduce(0) { $0 + $1.order.cost }
+    }
+    
     init(userID: String) {
         Task {
             //get profile

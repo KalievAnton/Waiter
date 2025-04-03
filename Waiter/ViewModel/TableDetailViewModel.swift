@@ -21,6 +21,6 @@ class TableDetailViewModel {
     }
     
     func fetchData() {
-        self.dish = Dish.mockData
+        
     }
 }
