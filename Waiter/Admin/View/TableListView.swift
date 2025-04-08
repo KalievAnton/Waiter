@@ -17,7 +17,7 @@ struct TableListView: View {
                     } .tint(.red)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "plus") {
+                    Button("", systemImage: "plus.circle") {
                         //TODO: Добавить нового сотрудника
                     }
                 }

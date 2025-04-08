@@ -166,6 +166,7 @@
 				529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */,
 				B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */,
 				B6DC681E2D9BE9CE00A187FD /* CreateDishViewModel.swift */,
+				B6DC68282D9E917E00A187FD /* CategoryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				E2EB16722D14243F00FD4F17 /* Coordinator.swift */,
-				B6DC68282D9E917E00A187FD /* CategoryListViewModel.swift */,
 				E2EB16742D14246100FD4F17 /* AuthViewModel.swift */,
 				E2EB167A2D1424BA00FD4F17 /* TableViewModel.swift */,
 				E2EB167C2D1424D900FD4F17 /* TableDetailViewModel.swift */,

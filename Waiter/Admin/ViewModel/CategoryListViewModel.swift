@@ -12,10 +12,15 @@ class CategoryListViewModel {
     var categories: [DishCategory] = []
     
     init() {
-        //TODO: Получить категории
+        fetchAllCategories()
     }
     
     func fetchAllCategories() {
-        
+        Task {
+            let categories = try await FirestoreService.getAllCategories()
+            await MainActor.run {
+                self.categories = categories
+            }
+        }
     }
 }

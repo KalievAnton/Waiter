@@ -12,7 +12,6 @@ struct ProductListView: View {
     @State private var showCreateDishView: Bool = false
     @State private var showCategoryListView: Bool = false
 
-    
     var body: some View {
         List(viewModel.dishes) { dish in
             HStack {
@@ -31,13 +30,13 @@ struct ProductListView: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "command") {
+                    Button("", systemImage: "list.bullet.circle") {
                         showCategoryListView.toggle()
                     }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "plus") {
+                    Button("", systemImage: "plus.circle") {
                         showCreateDishView.toggle()
                     }
                 }

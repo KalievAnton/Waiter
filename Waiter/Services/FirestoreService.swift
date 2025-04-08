@@ -13,6 +13,7 @@ actor FirestoreService {
     static let database = Firestore.firestore()
     static var profilesRef: CollectionReference { database.collection("profiles") }
     static var dishesRef: CollectionReference { database.collection("dishes") }
+    static var dishCategoriesRef: CollectionReference { database.collection("categories") }
     
     @discardableResult
     static func createProfile(_ profile: Profile) async throws -> Profile {
@@ -49,5 +50,21 @@ actor FirestoreService {
         }
         
         return allDishes
+    }
+    
+    static func setDishCategory(_ dishCategory: DishCategory) async throws {
+        try await dishCategoriesRef.document(dishCategory.id).setData(dishCategory.representation)
+    }
+    
+    static func getAllCategories() async throws -> [DishCategory] {
+        let allcategoriesSnapshot = try await dishCategoriesRef.getDocuments()
+        let allcategoriesDocument = allcategoriesSnapshot.documents
+        let allCategories = allcategoriesDocument.compactMap { snapshot in
+            let data = snapshot.data()
+            let categories = DishCategory(data)
+            return categories
+        }
+        
+        return allCategories
     }
 }

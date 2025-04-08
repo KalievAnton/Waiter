@@ -31,7 +31,7 @@ struct EmployeeListView: View {
                 }.tint(.red)
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button("", systemImage: "plus") {
+                Button("", systemImage: "plus.circle") {
                     showStaffRegView = true
                 }
             }

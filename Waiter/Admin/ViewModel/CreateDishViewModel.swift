@@ -13,16 +13,24 @@ class CreateDishViewModel {
     var price: Int?
     var description = ""
     var volume = ""
-//    var category: Category = .salads
-    var categories: [DishCategory] = [.init(id: "0", title: "Выберите категорию"),
-                                      .init(id: "1", title: "Салаты"),
-                                      .init(id: "2", title: "Супы"),
-                                      .init(id: "3", title: "Напитки") ]
-    var dishCategory: DishCategory = .init(id: "0", title: "Выберите категорию")
+    var dishCategory: DishCategory
+//    var categories: [String] = []
+    
+//    [.init(id: "0", title: "Выберите категорию"),
+//                                      .init(id: "1", title: "Салаты"),
+//                                      .init(id: "2", title: "Супы"),
+//                                      .init(id: "3", title: "Напитки") ]
+//    
+//    var dishCategory: DishCategory = .init(title: "Выберите категорию")
     
     init() {
-        //TODO: Получить все категории
+        dishCategory = DishCategory(id: "", title: "")
+        createCategory()
     }
+    
+//    init(_ dishCategory: DishCategory) {
+//        self.dishCategory = dishCategory
+//    }
     
     func createDish() {
         Task {
@@ -37,6 +45,12 @@ class CreateDishViewModel {
                                                     description: description,
                                                     volume: volume,
                                                     category: dishCategory.id))
+        }
+    }
+    
+    func createCategory() {
+        Task {
+            try await FirestoreService.setDishCategory(dishCategory)
         }
     }
 }

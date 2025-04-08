@@ -21,8 +21,8 @@ struct CreateDishView: View {
                 .font(.custom(.boldMontserrat, size: 32))
                 .padding(.bottom)
                 .foregroundStyle(Color.white)
-            Picker("Категория", selection: $viewModel.dishCategory) {
-                ForEach(viewModel.categories) { categ in
+            Picker("Категория", selection: $viewModel.dishCategory.title) {
+                ForEach(viewModel.dishCategory) { categ in
                     Text(categ.title.uppercased()).tag(categ)
                 }
             }

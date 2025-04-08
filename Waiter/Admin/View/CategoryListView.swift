@@ -29,7 +29,7 @@ struct CategoryListView: View {
                                      placeholder: "Название категории",
                                      hasEye: false)
                     RoundedButton(text: "Готово!") {
-                        //TODO: Сохранить категорию в базе
+                        viewModel.fetchAllCategories()
                         showAddCategoryAlert = false
                     }
                 }
