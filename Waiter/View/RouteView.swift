@@ -21,16 +21,7 @@ struct RouteView: View {
                     .navigationTitle("Столы")
             }
         case .adminpanel:
-                TabView {
-                    NavigationStack { EmployeeListView(coordinator: $coordinator) }
-                    .tabItem { Label("Сотрудники", systemImage: "person.2.circle.fill") }
-                    NavigationStack { TableListView() }
-                    .tabItem { Label("Столы", systemImage: "table.furniture") }
-                    NavigationStack { ProductListView() }
-                        .tabItem { Label("Меню", systemImage: "menucard") }
-                    NavigationStack { Text("Статистика") }
-                        .tabItem { Label("Статистика", systemImage: "chart.xyaxis.line") }
-                }
+            RouteAdminView(coordinator: $coordinator)
         }
     }
 }

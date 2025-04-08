@@ -8,7 +8,7 @@
 import Foundation
 
 struct DishCategory: Identifiable, Hashable {
-    let id: String
+    var id: String = UUID().uuidString
     var title: String
 }
 

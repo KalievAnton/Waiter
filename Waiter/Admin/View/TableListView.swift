@@ -8,20 +8,49 @@
 import SwiftUI
 
 struct TableListView: View {
+    @State private var viewModel = TableListViewModel()
+    @State private var newNumber: Int? = 0
+    @State private var showAddTableAlert = false
+    
     var body: some View {
-        Text("Столы")
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Выйти", role: .destructive) {
-                        
-                    } .tint(.red)
+        List(viewModel.tables, rowContent: { table in
+            Text("Стол #\(table.number)")
+        })
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Выйти", role: .destructive) {
+                    
+                } .tint(.red)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("", systemImage: "plus.circle") {
+                    showAddTableAlert.toggle()
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "plus.circle") {
-                        //TODO: Добавить нового сотрудника
+            }
+        }
+        .overlay {
+            VStack {
+                Text("Новая категория").bold()
+                TextField("Номер стола",
+                          value: $newNumber,
+                          format: .number)
+                RoundedButton(text: "Готово!") {
+                    if let newNumber {
+                        viewModel.createTable(number: newNumber)
+                        showAddTableAlert = false
+                        self.newNumber = nil
                     }
                 }
             }
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.white)
+                    .shadow(radius: 3)
+            }
+            .padding()
+            .offset(y: showAddTableAlert ? 0 : 1000)
+        }
     }
 }
 

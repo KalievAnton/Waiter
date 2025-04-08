@@ -12,10 +12,10 @@ class TableViewModel {
     var profile: Profile?
     var tables: [Table] = [ ]
     
-    var totalTableDescription: String { "\(total) ₽"}
-    var total: Int {
-        tables.reduce(0) { $0 + $1.order.cost }
-    }
+    var totalTableDescription: String { "МНОГА ₽"}
+//    var total: Int {
+//        tables.reduce(0) { $0 + $1.order.cost }
+//    }
     
     init(userID: String) {
         Task {

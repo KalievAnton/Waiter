@@ -14,7 +14,23 @@ actor FirestoreService {
     static var profilesRef: CollectionReference { database.collection("profiles") }
     static var dishesRef: CollectionReference { database.collection("dishes") }
     static var dishCategoriesRef: CollectionReference { database.collection("categories") }
+    static var tablesRef: CollectionReference { database.collection("tables") }
+
+    //MARK: - TABLE
+    static func fetchTables() async throws -> [Table] {
+        let snapshot = try await tablesRef.getDocuments()
+        let data = snapshot.documents
+        let tables = data.compactMap { Table(data: $0.data()) }
+        return tables
+    }
     
+    @discardableResult
+    static func createTable(_ table: Table) async throws -> Table {
+        try await tablesRef.document(table.id).setData(table.representation)
+        return table
+    }
+    
+    //MARK: - PROFILE
     @discardableResult
     static func createProfile(_ profile: Profile) async throws -> Profile {
         try await profilesRef.document(profile.id).setData(profile.representation)
@@ -36,6 +52,7 @@ actor FirestoreService {
             .sorted { $0.name < $1.name }
     }
     
+    //MARK: - DISH
     static func setDish(_ dish: Dish) async throws {
         try await dishesRef.document(dish.id).setData(dish.representation)
     }
@@ -52,6 +69,7 @@ actor FirestoreService {
         return allDishes
     }
     
+    //MARK: - CATEGORY
     static func setDishCategory(_ dishCategory: DishCategory) async throws {
         try await dishCategoriesRef.document(dishCategory.id).setData(dishCategory.representation)
     }

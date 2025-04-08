@@ -29,8 +29,10 @@ struct CategoryListView: View {
                                      placeholder: "Название категории",
                                      hasEye: false)
                     RoundedButton(text: "Готово!") {
-                        viewModel.fetchAllCategories()
+                        viewModel.createCategory(title: newCategoryTitle)
                         showAddCategoryAlert = false
+                        newCategoryTitle.removeAll()
+                        
                     }
                 }
                 .padding()

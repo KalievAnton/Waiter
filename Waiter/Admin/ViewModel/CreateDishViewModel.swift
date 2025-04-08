@@ -13,24 +13,12 @@ class CreateDishViewModel {
     var price: Int?
     var description = ""
     var volume = ""
-    var dishCategory: DishCategory
-//    var categories: [String] = []
-    
-//    [.init(id: "0", title: "Выберите категорию"),
-//                                      .init(id: "1", title: "Салаты"),
-//                                      .init(id: "2", title: "Супы"),
-//                                      .init(id: "3", title: "Напитки") ]
-//    
-//    var dishCategory: DishCategory = .init(title: "Выберите категорию")
+    var dishCategories: [DishCategory] = []
+    var selectedCategory: DishCategory = .init(id: "0", title: "Выберите категорию")
     
     init() {
-        dishCategory = DishCategory(id: "", title: "")
-        createCategory()
+        getAllCategories()
     }
-    
-//    init(_ dishCategory: DishCategory) {
-//        self.dishCategory = dishCategory
-//    }
     
     func createDish() {
         Task {
@@ -38,19 +26,30 @@ class CreateDishViewModel {
             guard !title.isEmpty else { return }
             guard !description.isEmpty else { return }
             guard !volume.isEmpty else { return }
-            guard dishCategory.id != "0" else { return }
+            guard selectedCategory.id != "0" else { return }
             
             try await FirestoreService.setDish(Dish(title: title,
                                                     price: price,
                                                     description: description,
                                                     volume: volume,
-                                                    category: dishCategory.id))
+                                                    category: selectedCategory.id))
         }
     }
     
-    func createCategory() {
+    func getAllCategories() {
         Task {
-            try await FirestoreService.setDishCategory(dishCategory)
+            let categories = try await FirestoreService.getAllCategories()
+            await MainActor.run {
+                self.dishCategories = categories
+                print(self.dishCategories.count)
+            }
         }
     }
+    
+//    func createCategory() {
+//        Task {
+//            try await FirestoreService.setDishCategory(dishCategories)
+//        }
+//    }
 }
+

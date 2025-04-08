@@ -23,4 +23,12 @@ class CategoryListViewModel {
             }
         }
     }
+    
+    func createCategory(title: String) {
+        Task {
+            guard !categories.contains(where: { $0.title.lowercased() == title.lowercased() }) else { return }
+            try await FirestoreService.setDishCategory(.init(title: title))
+            fetchAllCategories()
+        }
+    }
 }

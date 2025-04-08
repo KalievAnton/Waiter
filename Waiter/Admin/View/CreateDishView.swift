@@ -10,6 +10,7 @@ import SwiftUI
 struct CreateDishView: View {
     @State private var viewModel = CreateDishViewModel()
     @State private var backgroundColor: Color = .black
+    @Environment (\.dismiss) var dismiss
     
     init() {
         UISegmentedControl.appearance().tintColor = .white
@@ -21,12 +22,22 @@ struct CreateDishView: View {
                 .font(.custom(.boldMontserrat, size: 32))
                 .padding(.bottom)
                 .foregroundStyle(Color.white)
-            Picker("Категория", selection: $viewModel.dishCategory.title) {
-                ForEach(viewModel.dishCategory) { categ in
-                    Text(categ.title.uppercased()).tag(categ)
+            
+            ScrollView {
+                ForEach(viewModel.dishCategories) { categ in
+                    HStack {
+                        Text(categ.title.uppercased())
+                            .foregroundStyle(viewModel.selectedCategory == categ ? .orange : .white)
+                            .font(viewModel.selectedCategory == categ ? .custom(.boldMontserrat, size: 16) : .custom(.regularMontserrat, size: 16))
+                            .frame(width: 300)
+                    }
+                    .onTapGesture {
+                        viewModel.selectedCategory = categ
+                    }
                 }
-            }
-            .tint(.white)
+            }.frame(width: 300, height: 150)
+                .animation(.bouncy, value: viewModel.selectedCategory)
+            
             RoundedTextField(text:  $viewModel.title,
                              placeholder: "Название",
                              hasEye: false)
@@ -41,6 +52,7 @@ struct CreateDishView: View {
                 .txtCreateDishStyle()
             RoundedButton(text: "Сохранить") {
                 viewModel.createDish()
+                dismiss()
             }
         }
             .padding(.horizontal, 32)

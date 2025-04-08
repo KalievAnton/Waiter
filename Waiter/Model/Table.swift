@@ -8,14 +8,34 @@
 import Foundation
 
 class Table: Identifiable {
-    let id: String = UUID().uuidString
+    var id: String
     var number: Int
     var guest: Int = 0
-    var order: Order = Order()
+    var order: [OrderPosition] = []
     var isTable: Bool { guest == 0 }
     
-    init(number: Int = 0) {
+    init(id: String = UUID().uuidString, number: Int = 0) {
         self.number = number
+        self.id = id
+    }
+}
+
+extension Table {
+    convenience init?(data: [String: Any]) {
+        guard let id = data["id"] as? String,
+              let number = data["number"] as? Int else { return nil }
+        
+        self.init(id: id, number: number)
+    }
+}
+
+extension Table {
+    var representation: [String : Any] {
+        [
+            "id": id,
+            "number": number,
+            "guest": guest,
+        ]
     }
 }
 

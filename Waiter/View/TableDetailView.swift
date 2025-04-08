@@ -17,7 +17,7 @@ struct TableDetailView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: layout) {
-                    ForEach(viewModel.table.order.positions) { position in
+                    ForEach(viewModel.table.order) { position in
                         DishCell(viewModel: .init(position: position))
                     }
                 }
