@@ -45,11 +45,5 @@ class CreateDishViewModel {
             }
         }
     }
-    
-//    func createCategory() {
-//        Task {
-//            try await FirestoreService.setDishCategory(dishCategories)
-//        }
-//    }
 }
 

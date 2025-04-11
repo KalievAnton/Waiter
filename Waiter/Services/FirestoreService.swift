@@ -20,13 +20,19 @@ actor FirestoreService {
     static func fetchTables() async throws -> [Table] {
         let snapshot = try await tablesRef.getDocuments()
         let data = snapshot.documents
-        let tables = data.compactMap { Table(data: $0.data()) }
-        return tables
+        return data
+            .compactMap { Table(data: $0.data()) }
+            .sorted { $0.number < $1.number }
     }
     
     @discardableResult
     static func createTable(_ table: Table) async throws -> Table {
         try await tablesRef.document(table.id).setData(table.representation)
+        return table
+    }
+    
+    static func deleteTable(_ table: Table) async throws -> Table {
+        try await tablesRef.document(table.id).delete()
         return table
     }
     

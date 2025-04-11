@@ -43,7 +43,3 @@ struct StaffRegistrationView: View {
         viewModel.signUp(login: viewModel.profile.email, pass: password)
     }
 }
-
-//#Preview {
-//    StaffRegistrationView(viewModel: .init(userID: ""))
-//}

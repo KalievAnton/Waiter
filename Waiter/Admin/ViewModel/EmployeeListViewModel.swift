@@ -12,7 +12,6 @@ import Foundation
 final class EmployeeListViewModel {
     var profiles: [Profile] = []
     
-    
     init() {
         getProfiles()
     }

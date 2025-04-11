@@ -10,11 +10,7 @@ import SwiftUI
 struct CreateDishView: View {
     @State private var viewModel = CreateDishViewModel()
     @State private var backgroundColor: Color = .black
-    @Environment (\.dismiss) var dismiss
-    
-    init() {
-        UISegmentedControl.appearance().tintColor = .white
-    }
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -31,12 +27,18 @@ struct CreateDishView: View {
                             .font(viewModel.selectedCategory == categ ? .custom(.boldMontserrat, size: 16) : .custom(.regularMontserrat, size: 16))
                             .frame(width: 300)
                     }
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(.clear)
+                            .stroke(viewModel.selectedCategory == categ ?  Color.white : Color.clear, lineWidth: 0.5)
+                    }
                     .onTapGesture {
                         viewModel.selectedCategory = categ
                     }
                 }
             }.frame(width: 300, height: 150)
                 .animation(.bouncy, value: viewModel.selectedCategory)
+                .scrollIndicators(.hidden)
             
             RoundedTextField(text:  $viewModel.title,
                              placeholder: "Название",

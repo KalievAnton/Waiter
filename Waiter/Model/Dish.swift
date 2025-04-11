@@ -30,35 +30,6 @@ class Dish: Identifiable {
     }
 }
 
-enum Category: String, CaseIterable {
-    case reptiles
-    case snack
-    case salads
-    case baseDishes
-    case soups
-    case sideDishes
-    case desserts
-    case bar
-    case sauces
-    case childrensMenu
-    
-    var label: String {
-        switch self {
-        case .reptiles: "Гады"
-        case .snack: "Закуски"
-        case .salads: "Салаты"
-        case .baseDishes: "Основые блюда"
-        case .soups: "Супы"
-        case .sideDishes: "Гарниры"
-        case .desserts: "Десерты"
-        case .bar: "Бар"
-        case .sauces: "Соусы"
-        case .childrensMenu: "Меню для детей"
-        }
-    }
-}
-
-
 extension Dish {
     var representation: [String : Any] {
         var represent: [String : Any] = [:]

@@ -42,7 +42,6 @@ class ProductListViewModel {
         guard let category = categories.first(where: { $0.id == id }) else { return nil }
         return category.title
     }
-    
 }
 
 struct CategorySection {

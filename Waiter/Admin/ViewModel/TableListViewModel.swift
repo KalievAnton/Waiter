@@ -26,8 +26,15 @@ class TableListViewModel {
     
     func createTable(number: Int) {
         Task {
+            guard !tables.contains(where: { $0.number == number }) else { return }
             try await FirestoreService.createTable(.init(number: number))
             fetchAllTables()
+        }
+    }
+    
+    func deleteTable(table: Table) {
+        Task {
+            try await FirestoreService.deleteTable(table)
         }
     }
 }

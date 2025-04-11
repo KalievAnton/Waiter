@@ -9,13 +9,23 @@ import SwiftUI
 
 struct TableListView: View {
     @State private var viewModel = TableListViewModel()
-    @State private var newNumber: Int? = 0
+    @State private var newNumber: Int?
     @State private var showAddTableAlert = false
     
     var body: some View {
         List(viewModel.tables, rowContent: { table in
             Text("Стол #\(table.number)")
+                .swipeActions {
+                    Button(role: .destructive) {
+                        viewModel.deleteTable(table: table)
+                    } label: {
+                        Label("Удалить", systemImage: "trash.fill")
+                    }
+                }
         })
+        .refreshable {
+            viewModel.fetchAllTables()
+        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Выйти", role: .destructive) {
@@ -30,7 +40,7 @@ struct TableListView: View {
         }
         .overlay {
             VStack {
-                Text("Новая категория").bold()
+                Text("Создать стол").bold()
                 TextField("Номер стола",
                           value: $newNumber,
                           format: .number)

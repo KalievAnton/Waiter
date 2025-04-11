@@ -38,7 +38,3 @@ extension Table {
         ]
     }
 }
-
-enum Space {
-    
-}
