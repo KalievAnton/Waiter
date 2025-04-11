@@ -35,6 +35,7 @@ class TableListViewModel {
     func deleteTable(table: Table) {
         Task {
             try await FirestoreService.deleteTable(table)
+            fetchAllTables()
         }
     }
 }
