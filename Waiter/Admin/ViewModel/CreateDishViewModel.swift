@@ -7,8 +7,21 @@
 
 import Foundation
 
+protocol SetDishVM {
+    var title: String { get }
+    var price: Int? { get }
+}
+
 @Observable
-class CreateDishViewModel {
+class UpdateDishViewModel: SetDishVM {
+    var title: String = ""
+    var price: Int? = 0
+    
+    
+}
+
+@Observable
+class CreateDishViewModel: SetDishVM {
     var title: String = ""
     var price: Int?
     var description = ""

@@ -31,6 +31,7 @@ actor FirestoreService {
         return table
     }
     
+    @discardableResult
     static func deleteTable(_ table: Table) async throws -> Table {
         try await tablesRef.document(table.id).delete()
         return table

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CreateDishView: View {
-    @State private var viewModel = CreateDishViewModel()
+struct SetDishView: View {
+    @State var viewModel: SetDishVM
     @State private var backgroundColor: Color = .black
     @Environment(\.dismiss) var dismiss
     
@@ -65,6 +65,6 @@ struct CreateDishView: View {
     }
 }
 
-#Preview {
-    CreateDishView()
-}
+//#Preview {
+//    SetDishView()
+//}

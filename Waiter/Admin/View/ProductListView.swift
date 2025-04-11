@@ -51,7 +51,7 @@ struct ProductListView: View {
         }
         .navigationTitle("Меню")
         .sheet(isPresented: $showCreateDishView) {
-            CreateDishView()
+            SetDishView(viewModel: CreateDishViewModel())
         }
         .sheet(isPresented: $showCategoryListView) {
             CategoryListView()
