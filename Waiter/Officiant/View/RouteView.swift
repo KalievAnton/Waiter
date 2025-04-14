@@ -16,8 +16,8 @@ struct RouteView: View {
             AuthView(coordinator: $coordinator)
         case .authorized(let userID):
             NavigationStack {
-                TableView(coordinator: $coordinator,
-                          viewModel: .init(userID: userID))
+                TablesView(coordinator: $coordinator,
+                           viewModel: .init())
                     .navigationTitle("Столы")
             }
         case .adminpanel:

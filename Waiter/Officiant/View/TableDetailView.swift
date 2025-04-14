@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TableDetailView: View {
     @State var viewModel: TableDetailViewModel
-    @Bindable var tableVM: TableViewModel
+    @Bindable var tableVM: TableListViewModel
     @State private var showAddDishView: Bool = false
     let layout: [GridItem] = [.init()]
     

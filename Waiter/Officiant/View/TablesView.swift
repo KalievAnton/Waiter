@@ -1,5 +1,5 @@
 //
-//  TableView.swift
+//  TablesView.swift
 //  Waiter
 //
 //  Created by Тони on 19.12.2024.
@@ -7,27 +7,32 @@
 
 import SwiftUI
 
-struct TableView: View {
+struct TablesView: View {
     @Binding var coordinator: Coordinator
-    @State var viewModel: TableViewModel
+    @State var viewModel: TableListViewModel
     let layout: [GridItem] = [.init(), .init()]
     
     var body: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: layout) {
-                    ForEach(viewModel.tables) { table in
-                        NavigationLink {
-                            TableDetailView(viewModel: .init(table: table), tableVM: viewModel)
-                        } label: {
-                            TableCell(viewModel: .init(table: table))
-                                .background(table.isTable ? Color.tableGreen : Color.tableBlue)
-                                .clipShape(.rect(cornerRadius: 20))
+                ForEach(viewModel.tableSections, id: \.space) { section in
+                    Section(section.space.label) {
+                        LazyVGrid(columns: layout) {
+                            ForEach(section.tablePosition) { table in
+                                NavigationLink {
+                                    TableDetailView(viewModel: .init(table: table),
+                                                    tableVM: viewModel)
+                                } label: {
+                                    
+                                    TableCell(viewModel: .init(table: table))
+                                        .background(table.isTable ? Color.tableGreen : Color.tableBlue)
+                                        .clipShape(.rect(cornerRadius: 20))
+                                }
+                            }
                         }
                     }
                 }
             }
-            
             HStack {
                 Text("ИТОГО:")
                     .tfBottomTotalTableStyle().padding(.leading, 16)

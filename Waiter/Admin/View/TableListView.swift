@@ -13,16 +13,20 @@ struct TableListView: View {
     @State private var showAddTableAlert = false
     
     var body: some View {
-        List(viewModel.tables, rowContent: { table in
-            Text("Стол #\(table.number)")
-                .swipeActions {
-                    Button(role: .destructive) {
-                        viewModel.deleteTable(table: table)
-                    } label: {
-                        Label("Удалить", systemImage: "trash.fill")
-                    }
+        List(viewModel.tableSections, id: \.space.label) { section in
+            Section(section.space.label) {
+                ForEach(section.tablePosition) { table in
+                    Text("Стол #\(table.number)")
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                viewModel.deleteTable(table: table)
+                            } label: {
+                                Label("Удалить", systemImage: "trash.fill")
+                            }
+                        }
                 }
-        })
+            }
+        }
         .refreshable {
             viewModel.fetchAllTables()
         }
@@ -40,6 +44,12 @@ struct TableListView: View {
         }
         .overlay {
             VStack {
+                Picker("Выберите зону обслуживания",
+                       selection: $viewModel.space) {
+                    ForEach(Space.allCases) { space in
+                        Text(space.label).tag(space)
+                    }
+                }.tint(.black)
                 Text("Создать стол").bold()
                 TextField("Номер стола",
                           value: $newNumber,

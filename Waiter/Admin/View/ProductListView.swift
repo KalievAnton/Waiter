@@ -11,6 +11,7 @@ struct ProductListView: View {
     @State private var viewModel = ProductListViewModel()
     @State private var showCreateDishView: Bool = false
     @State private var showCategoryListView: Bool = false
+    @State private var showUpdateDishView = false
     
     var body: some View {
         List(viewModel.sections, id: \.categoryID) { section in
@@ -22,13 +23,23 @@ struct ProductListView: View {
                         Text(dish.volume)
                             .padding(8)
                         Text("\(dish.price) ₽")
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                Button("Изменить") {
+                                    viewModel.currentDish = dish
+                                    showUpdateDishView = true
+                                }
+                            }
                     }
                 }
             }
         
         }
+        .searchable(text: $viewModel.searchText, prompt: "Поиск блюд")
         .refreshable {
             viewModel.fetchDishes()
+        }
+        .onChange(of: viewModel.searchText) {
+            viewModel.search()
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -36,7 +47,6 @@ struct ProductListView: View {
                     
                 } .tint(.red)
             }
-            
             ToolbarItem(placement: .topBarTrailing) {
                 Button("", systemImage: "list.bullet.circle") {
                     showCategoryListView.toggle()
@@ -56,6 +66,9 @@ struct ProductListView: View {
         .sheet(isPresented: $showCategoryListView) {
             CategoryListView()
         }
+        .sheet(isPresented: $showUpdateDishView, content: {
+            SetDishView(viewModel: UpdateDishViewModel(dish: viewModel.currentDish))
+        })
     }
 }
 

@@ -31,10 +31,8 @@ actor FirestoreService {
         return table
     }
     
-    @discardableResult
-    static func deleteTable(_ table: Table) async throws -> Table {
+    static func deleteTable(_ table: Table) async throws {
         try await tablesRef.document(table.id).delete()
-        return table
     }
     
     //MARK: - PROFILE

@@ -24,7 +24,9 @@ struct SetDishView: View {
                     HStack {
                         Text(categ.title.uppercased())
                             .foregroundStyle(viewModel.selectedCategory == categ ? .orange : .white)
-                            .font(viewModel.selectedCategory == categ ? .custom(.boldMontserrat, size: 16) : .custom(.regularMontserrat, size: 16))
+                            .font(viewModel.selectedCategory == categ ?
+                                .custom(.boldMontserrat, size: 16) :
+                                    .custom(.regularMontserrat, size: 16))
                             .frame(width: 300)
                     }
                     .overlay {
@@ -40,31 +42,28 @@ struct SetDishView: View {
                 .animation(.bouncy, value: viewModel.selectedCategory)
                 .scrollIndicators(.hidden)
             
-            RoundedTextField(text:  $viewModel.title,
+            RoundedTextField(text: $viewModel.title,
                              placeholder: "Название",
                              hasEye: false)
             TextField("Цена",
                       value: $viewModel.price,
                       format: .number)
-                .txtCreateDishStyle()
+            .txtCreateDishStyle()
             RoundedTextField(text:  $viewModel.volume,
                              placeholder: "Объём",
                              hasEye: false)
             TextField("Описание", text: $viewModel.description)
                 .txtCreateDishStyle()
             RoundedButton(text: "Сохранить") {
-                viewModel.createDish()
+                viewModel.setDish()
                 dismiss()
             }
         }
-            .padding(.horizontal, 32)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background {
-                Color.gray.ignoresSafeArea()
-            }
+        .padding(.horizontal, 32)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            Color.gray.ignoresSafeArea()
+        }
     }
 }
 
-//#Preview {
-//    SetDishView()
-//}
