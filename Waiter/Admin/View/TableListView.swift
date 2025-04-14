@@ -40,6 +40,11 @@ struct TableListView: View {
         }
         .overlay {
             VStack {
+//                Picker("Выберите зону обслуживания", selection: viewModel.space.label) {
+//                    ForEach(Space.allCases, id: \.self) { spaces in
+//                        Text(spaces.label).tag(spaces)
+//                    }
+//                }.tint(.black)
                 Text("Создать стол").bold()
                 TextField("Номер стола",
                           value: $newNumber,

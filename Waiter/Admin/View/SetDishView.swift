@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SetDishView: View {
-    @State var viewModel: SetDishVM
+    @State var viewModel = CreateDishViewModel()
     @State private var backgroundColor: Color = .black
     @Environment(\.dismiss) var dismiss
     
@@ -24,7 +24,9 @@ struct SetDishView: View {
                     HStack {
                         Text(categ.title.uppercased())
                             .foregroundStyle(viewModel.selectedCategory == categ ? .orange : .white)
-                            .font(viewModel.selectedCategory == categ ? .custom(.boldMontserrat, size: 16) : .custom(.regularMontserrat, size: 16))
+                            .font(viewModel.selectedCategory == categ ?
+                                .custom(.boldMontserrat, size: 16) :
+                                    .custom(.regularMontserrat, size: 16))
                             .frame(width: 300)
                     }
                     .overlay {
@@ -40,7 +42,7 @@ struct SetDishView: View {
                 .animation(.bouncy, value: viewModel.selectedCategory)
                 .scrollIndicators(.hidden)
             
-            RoundedTextField(text:  $viewModel.title,
+            RoundedTextField(text: $viewModel.title,
                              placeholder: "Название",
                              hasEye: false)
             TextField("Цена",
@@ -64,7 +66,3 @@ struct SetDishView: View {
             }
     }
 }
-
-//#Preview {
-//    SetDishView()
-//}

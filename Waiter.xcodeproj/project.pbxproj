@@ -22,7 +22,6 @@
 		524B70572D832D39008C0356 /* CustomDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B70562D832D39008C0356 /* CustomDropdown.swift */; };
 		529DE6352D996A1C008D20C2 /* StaffRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DE6342D996A1C008D20C2 /* StaffRegistrationView.swift */; };
 		529DE6372D996A5C008D20C2 /* StaffRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */; };
-		52C553E52DA69F3300BB9415 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C553E42DA69F3300BB9415 /* Space.swift */; };
 		52CDEAB62D84670B00FD7BDD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CDEAB52D84670B00FD7BDD /* AuthService.swift */; };
 		52CDEAB82D84676B00FD7BDD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 52CDEAB72D84676B00FD7BDD /* FirebaseAuth */; };
 		52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */; };
@@ -83,7 +82,6 @@
 		524B70562D832D39008C0356 /* CustomDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropdown.swift; sourceTree = "<group>"; };
 		529DE6342D996A1C008D20C2 /* StaffRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffRegistrationView.swift; sourceTree = "<group>"; };
 		529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffRegistrationViewModel.swift; sourceTree = "<group>"; };
-		52C553E42DA69F3300BB9415 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		52CDEAB52D84670B00FD7BDD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		52FA47502D808AD40024CDC8 /* Color + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + ext.swift"; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 				E2EB16642D1422D600FD4F17 /* Dish.swift */,
 				B6DC68242D9E8BBC00A187FD /* DishCategory.swift */,
 				E2EB16662D1422DD00FD4F17 /* Table.swift */,
-				52C553E42DA69F3300BB9415 /* Space.swift */,
 				B6DC68162D9BE78200A187FD /* OrderPosition.swift */,
 				B6DC68222D9E877E00A187FD /* Order.swift */,
 				523F01932D81C9060011A846 /* Profile.swift */,
@@ -426,7 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C553E52DA69F3300BB9415 /* Space.swift in Sources */,
 				E2EB166F2D14237E00FD4F17 /* TableCell.swift in Sources */,
 				529DE6372D996A5C008D20C2 /* StaffRegistrationViewModel.swift in Sources */,
 				E2EB165B2D14221A00FD4F17 /* RouteView.swift in Sources */,
