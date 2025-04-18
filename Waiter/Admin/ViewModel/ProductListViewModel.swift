@@ -15,6 +15,7 @@ class ProductListViewModel {
     var categories: [DishCategory] = []
     var currentDish: Dish = Dish(title: "", price: 0, description: "", volume: "", category: "")
     var searchText = ""
+    var selectedCategory: DishCategory? = nil
     
     init() {
         fetchDishes()
@@ -60,6 +61,19 @@ class ProductListViewModel {
         self.searchedDishes = self.dishes.filter({ dish in
             dish.title.lowercased().contains(self.searchText.lowercased())
         })
+        divideBySections()
+    }
+    
+    func selectCategory(_ selected: DishCategory? = nil) {
+        self.selectedCategory = selected
+        guard let selectedCategory else {
+            self.searchedDishes = self.dishes
+            divideBySections()
+            return
+        }
+        self.searchedDishes = self.dishes.filter {
+            $0.category == selectedCategory.id
+        }
         divideBySections()
     }
 }
