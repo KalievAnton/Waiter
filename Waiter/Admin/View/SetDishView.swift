@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SetDishView: View {
-    @State var viewModel: SetDishVM
+    @State var viewModel: SetDishViewModel
     @State private var backgroundColor: Color = .black
     @Environment(\.dismiss) var dismiss
     
@@ -25,14 +25,14 @@ struct SetDishView: View {
                         Text(categ.title.uppercased())
                             .foregroundStyle(viewModel.selectedCategory == categ ? .orange : .white)
                             .font(viewModel.selectedCategory == categ ?
-                                .custom(.boldMontserrat, size: 16) :
+                                .custom(.boldMontserrat, size: 18) :
                                     .custom(.regularMontserrat, size: 16))
                             .frame(width: 300)
                     }
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
                             .fill(.clear)
-                            .stroke(viewModel.selectedCategory == categ ?  Color.white : Color.clear, lineWidth: 0.5)
+                            .stroke(viewModel.selectedCategory == categ ?  Color.white : Color.clear, lineWidth: 0.3)
                     }
                     .onTapGesture {
                         viewModel.selectedCategory = categ

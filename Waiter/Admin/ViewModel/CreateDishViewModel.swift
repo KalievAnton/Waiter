@@ -10,7 +10,7 @@ import Foundation
 
 
 @Observable
-class CreateDishViewModel: SetDishVM {
+class CreateDishViewModel: SetDishViewModel {
     var title: String = ""
     var price: Int?
     var description = ""
@@ -49,5 +49,3 @@ class CreateDishViewModel: SetDishVM {
         }
     }
 }
-
-

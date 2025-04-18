@@ -63,8 +63,3 @@ class ProductListViewModel {
         divideBySections()
     }
 }
-
-struct CategorySection {
-    let categoryID: String
-    var dishes: [Dish] = []
-}

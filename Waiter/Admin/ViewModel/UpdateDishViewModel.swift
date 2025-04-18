@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class UpdateDishViewModel: SetDishVM {
+class UpdateDishViewModel: SetDishViewModel {
     var id: String = UUID().uuidString
     var title: String = ""
     var price: Int? = 0
@@ -63,5 +63,3 @@ class UpdateDishViewModel: SetDishVM {
         }
     }
 }
-
-

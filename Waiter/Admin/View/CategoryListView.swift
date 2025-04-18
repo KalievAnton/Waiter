@@ -24,7 +24,7 @@ struct CategoryListView: View {
             }
             .overlay {
                 VStack {
-                    Text("Новая категория").bold()
+                    Text("Добавьте категорию").bold()
                     RoundedTextField(text: $newCategoryTitle,
                                      placeholder: "Название категории",
                                      hasEye: false)
@@ -43,7 +43,6 @@ struct CategoryListView: View {
                 }
                 .padding()
                 .offset(y: showAddCategoryAlert ? 0 : 1000)
-                
             }
         }
     }

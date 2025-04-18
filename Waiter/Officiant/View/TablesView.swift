@@ -23,7 +23,6 @@ struct TablesView: View {
                                     TableDetailView(viewModel: .init(table: table),
                                                     tableVM: viewModel)
                                 } label: {
-                                    
                                     TableCell(viewModel: .init(table: table))
                                         .background(table.isTable ? Color.tableGreen : Color.tableBlue)
                                         .clipShape(.rect(cornerRadius: 20))
@@ -49,7 +48,13 @@ struct TablesView: View {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Выйти") {
                     Task {
-                        await AuthService.signOut()
+                        let result = await viewModel.signOut()
+                        await MainActor.run {
+                            switch result {
+                            case true: coordinator.appState = .unauthorized
+                            case false: break
+                            }
+                        }
                     }
                 }
             }

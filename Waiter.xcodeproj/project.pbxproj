@@ -12,6 +12,8 @@
 		522851722D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851712D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift */; };
 		522851742D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851732D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift */; };
 		522851762D9D45AD00EBD9D5 /* TxtCreateDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522851752D9D45AD00EBD9D5 /* TxtCreateDish.swift */; };
+		5235CD2D2DAE9FAF002BBB89 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235CD2C2DAE9FAF002BBB89 /* CategorySection.swift */; };
+		5235CD2F2DAE9FDA002BBB89 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235CD2E2DAE9FDA002BBB89 /* TableSection.swift */; };
 		523F018E2D81C1F50011A846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 523F018D2D81C1F50011A846 /* GoogleService-Info.plist */; };
 		523F01922D81C45B0011A846 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 523F01912D81C45B0011A846 /* FirebaseCore */; };
 		523F01942D81C9070011A846 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F01932D81C9060011A846 /* Profile.swift */; };
@@ -75,6 +77,8 @@
 		522851712D9D32A800EBD9D5 /* RoundedTextFieldPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldPrice.swift; sourceTree = "<group>"; };
 		522851732D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldDesription.swift; sourceTree = "<group>"; };
 		522851752D9D45AD00EBD9D5 /* TxtCreateDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtCreateDish.swift; sourceTree = "<group>"; };
+		5235CD2C2DAE9FAF002BBB89 /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
+		5235CD2E2DAE9FDA002BBB89 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		523F018D2D81C1F50011A846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		523F01932D81C9060011A846 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		523F01952D81D7F40011A846 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -172,15 +176,24 @@
 			isa = PBXGroup;
 			children = (
 				5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */,
-				529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */,
 				B6937EB62DA528570079B1B2 /* TableListViewModel.swift */,
 				B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */,
+				B6DC68282D9E917E00A187FD /* CategoryListViewModel.swift */,
 				B69F4F472DAE5A1B00B4E362 /* SetDishViewModel.swift */,
 				B6DC681E2D9BE9CE00A187FD /* CreateDishViewModel.swift */,
 				B69F4F492DAE5A2C00B4E362 /* UpdateDishViewModel.swift */,
-				B6DC68282D9E917E00A187FD /* CategoryListViewModel.swift */,
+				529DE6362D996A5C008D20C2 /* StaffRegistrationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5235CD2B2DAE9F82002BBB89 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				5235CD2C2DAE9FAF002BBB89 /* CategorySection.swift */,
+				5235CD2E2DAE9FDA002BBB89 /* TableSection.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		523F01902D81C45B0011A846 /* Frameworks */ = {
@@ -212,8 +225,8 @@
 			children = (
 				B6D9663B2DAE65030004C09F /* AuthView.swift */,
 				B6D9663C2DAE65030004C09F /* RouteView.swift */,
-				B6D9663D2DAE65030004C09F /* TableDetailView.swift */,
 				B6D9663E2DAE65030004C09F /* TablesView.swift */,
+				B6D9663D2DAE65030004C09F /* TableDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +310,7 @@
 		E2EB165E2D14224800FD4F17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5235CD2B2DAE9F82002BBB89 /* Section */,
 				E2EB16642D1422D600FD4F17 /* Dish.swift */,
 				B6DC68242D9E8BBC00A187FD /* DishCategory.swift */,
 				E2EB16662D1422DD00FD4F17 /* Table.swift */,
@@ -472,6 +486,7 @@
 				B6D966442DAE65030004C09F /* TablesView.swift in Sources */,
 				522851762D9D45AD00EBD9D5 /* TxtCreateDish.swift in Sources */,
 				B69F4F4A2DAE5A2C00B4E362 /* UpdateDishViewModel.swift in Sources */,
+				5235CD2D2DAE9FAF002BBB89 /* CategorySection.swift in Sources */,
 				522851742D9D430D00EBD9D5 /* RoundedTextFieldDesription.swift in Sources */,
 				E24FA4E32D1ABE7900F2C93C /* TxtTableCell.swift in Sources */,
 				E2EB16842D14253100FD4F17 /* Error.swift in Sources */,
@@ -487,6 +502,7 @@
 				E2EB167B2D1424BA00FD4F17 /* TablesViewModel.swift in Sources */,
 				523F019C2D81F27E0011A846 /* Resourses.swift in Sources */,
 				52CDEAB62D84670B00FD7BDD /* AuthService.swift in Sources */,
+				5235CD2F2DAE9FDA002BBB89 /* TableSection.swift in Sources */,
 				52FA47512D808AD40024CDC8 /* Color + ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

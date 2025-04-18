@@ -11,7 +11,7 @@ struct ProductListView: View {
     @State private var viewModel = ProductListViewModel()
     @State private var showCreateDishView: Bool = false
     @State private var showCategoryListView: Bool = false
-    @State private var showUpdateDishView = false
+    @State private var showUpdateDishView: Bool = false
     
     var body: some View {
         List(viewModel.sections, id: \.categoryID) { section in
@@ -32,7 +32,6 @@ struct ProductListView: View {
                     }
                 }
             }
-        
         }
         .searchable(text: $viewModel.searchText, prompt: "Поиск блюд")
         .refreshable {

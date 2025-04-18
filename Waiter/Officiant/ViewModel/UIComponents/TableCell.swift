@@ -33,5 +33,5 @@ struct TableCell: View {
 }
 
 #Preview {
-    TableCell(viewModel: .init(table: Table(space: .nall1)))
+    TableCell(viewModel: .init(table: Table(space: .hall1)))
 }

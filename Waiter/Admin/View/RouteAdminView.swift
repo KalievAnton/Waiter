@@ -14,7 +14,7 @@ struct RouteAdminView: View {
         TabView {
             NavigationStack { EmployeeListView(coordinator: $coordinator) }
                 .tabItem { Label("Сотрудники", systemImage: "person.2.circle.fill") }
-            NavigationStack { TableListView() }
+            NavigationStack { TableListView(coordinator: $coordinator) }
                 .tabItem { Label("Столы", systemImage: "table.furniture") }
             NavigationStack { ProductListView() }
                 .tabItem { Label("Меню", systemImage: "menucard") }

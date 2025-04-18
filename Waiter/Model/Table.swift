@@ -24,16 +24,16 @@ class Table: Identifiable {
 
 enum Space: String, CaseIterable, Identifiable {
     case veranda
-    case nall1
-    case nall2
+    case hall1
+    case hall2
     
     var id: Space { self }
     
     var label: String {
         switch self {
         case .veranda: return "Веранда"
-        case .nall1: return "Зал 1"
-        case .nall2: return "Зал 2"
+        case .hall1: return "Зал 1"
+        case .hall2: return "Зал 2"
         }
     }
 }

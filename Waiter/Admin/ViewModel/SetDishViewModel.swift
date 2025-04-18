@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SetDishVM {
+protocol SetDishViewModel {
     var title: String { get set }
     var price: Int? { get set }
     var description: String { get set }

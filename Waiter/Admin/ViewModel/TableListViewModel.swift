@@ -60,9 +60,8 @@ class TableListViewModel {
             fetchAllTables()
         }
     }
-}
-
-struct TableSection {
-    let space: Space
-    var tablePosition: [Table] = []
+    
+    func signOut() async -> Bool {
+        await AuthService.signOut()
+    }
 }
