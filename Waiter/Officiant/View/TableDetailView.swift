@@ -45,7 +45,8 @@ struct TableDetailView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    showAddDishView = true
+                    showAddDishView.toggle()
+                   
                 } label: {
                     Image("plusCircle")
                 }
@@ -55,21 +56,23 @@ struct TableDetailView: View {
         .overlay {
             ZStack {
                 Rectangle()
-                    .fill(Color.black.opacity(0.8))
+                    .fill(Color.white.opacity(0.5))
                     .ignoresSafeArea()
                 
+                VStack {
+                        Text("Блюда")
+                            .font(.custom(.boldMontserrat, size: 15))
+                            .foregroundStyle(.white)
+                            .padding()
+                }
             }
-            .foregroundStyle(.white)
             .frame(width: 370, height: 680, alignment: .leading)
-            .background(Color.white)
             .clipShape(.rect(cornerRadius: 12))
-            .padding(.vertical, 5)
-            .offset(y: -20)
+            .offset(y: showAddDishView ? -20 : 1000)
         }
-        
     }
 }
 
-//#Preview {
-//    TableDetailView(viewModel: .init(table: .init()), tableVM: .init(user: .init()))
-//}
+#Preview {
+    TableDetailView(viewModel: .init(table: .init()), tableVM: .init())
+}

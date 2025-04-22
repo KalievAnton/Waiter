@@ -9,7 +9,8 @@ import Foundation
 
 @Observable
 class TableDetailViewModel {
-    var dish: [Dish] = []
+    var dishes: [Dish] = []
+    var categories: [DishCategory] = []
     var table: Table
     var searchText: String = ""
     var totalDishDescription: String { "\(total) ₽" }
@@ -17,10 +18,19 @@ class TableDetailViewModel {
     
     init(table: Table) {
         self.table = table
-        fetchData()
+        fetchDishes()
     }
     
-    func fetchData() {
-        
+    func fetchDishes() {
+        Task {
+            let dishes = try await FirestoreService.getAllDishes()
+            await MainActor.run {
+                self.dishes = dishes
+            }
+            let categories = try await FirestoreService.getAllCategories()
+            await MainActor.run {
+                self.categories = categories
+            }
+        }
     }
 }

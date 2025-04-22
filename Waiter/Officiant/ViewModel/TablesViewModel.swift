@@ -10,7 +10,7 @@ import Foundation
 @Observable
 class TablesViewModel {
     var profile: Profile?
-    var tables: [Table] = [ ]
+    var tables: [Table] = []
     
     var totalTableDescription: String { "МНОГА ₽"}
 //    var total: Int {

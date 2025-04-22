@@ -11,6 +11,7 @@ struct SetDishView: View {
     @State var viewModel: SetDishViewModel
     @State private var backgroundColor: Color = .black
     @Environment(\.dismiss) var dismiss
+    @Namespace var namespace
     
     var body: some View {
         VStack {
@@ -23,19 +24,15 @@ struct SetDishView: View {
                 ForEach(viewModel.dishCategories) { categ in
                     HStack {
                         Text(categ.title.uppercased())
+                            .underline(true, color: viewModel.selectedCategory == categ ? .orange : .clear)
                             .foregroundStyle(viewModel.selectedCategory == categ ? .orange : .white)
                             .font(viewModel.selectedCategory == categ ?
                                 .custom(.boldMontserrat, size: 18) :
                                     .custom(.regularMontserrat, size: 16))
                             .frame(width: 300)
                     }
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(.clear)
-                            .stroke(viewModel.selectedCategory == categ ?  Color.white : Color.clear, lineWidth: 0.3)
-                    }
                     .onTapGesture {
-                        viewModel.selectedCategory = categ
+                            viewModel.selectedCategory = categ
                     }
                 }
             }.frame(width: 300, height: 150)
