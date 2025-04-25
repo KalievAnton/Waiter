@@ -46,7 +46,7 @@ struct TableDetailView: View {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     showAddDishView.toggle()
-                   
+                    
                 } label: {
                     Image("plusCircle")
                 }
@@ -54,24 +54,48 @@ struct TableDetailView: View {
         }
         
         .overlay {
-            ZStack {
-                Rectangle()
-                    .fill(Color.white.opacity(0.5))
-                    .ignoresSafeArea()
-                
-                VStack {
-                        Text("Блюда")
-                            .font(.custom(.boldMontserrat, size: 15))
-                            .foregroundStyle(.white)
-                            .padding()
+            VStack {
+                Text("Блюда")
+                    .font(.custom(.boldMontserrat, size: 15))
+                    .foregroundStyle(.white)
+                    .padding()
+                ScrollView {
+                    VStack {
+                        ForEach(viewModel.productsVM.sections, id: \.categoryID) { section in
+                            Section(viewModel.productsVM.getCategoryTitleBy(categoryID: section.categoryID) ?? "----") {
+                                ForEach(section.dishes) { dish in
+                                    HStack {
+                                        Text(dish.title).bold()
+                                        Spacer()
+                                        Text(dish.volume)
+                                            .padding(8)
+                                        Text("\(dish.price) ₽")
+                                    }
+                                    .padding(8)
+                                    .background(.white.opacity(0.3))
+                                    .clipShape(.rect(cornerRadius: 8))
+                                    .padding(4)
+                                    .onTapGesture {
+                                        viewModel.addPosition(dish: dish)
+                                        showAddDishView = false
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            .frame(width: 370, height: 680, alignment: .leading)
-            .clipShape(.rect(cornerRadius: 12))
+            .background {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.white.opacity(0.5))
+            }
             .offset(y: showAddDishView ? -20 : 1000)
+            .padding(.vertical, 36)
+            .padding(.horizontal, 12)
         }
     }
 }
+
 
 #Preview {
     TableDetailView(viewModel: .init(table: .init()), tableVM: .init())

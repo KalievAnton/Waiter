@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct DishCell: View {
-    @State var viewModel: DishCellViewModel
+    @Bindable var viewModel: DishCellViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(viewModel.position.productID)
-                .fontDishCellFalseStyle()
+            HStack {
+                Text(viewModel.position.title)
+                    .fontDishCellFalseStyle()
+                Stepper("Кол-во", value: $viewModel.position.count, in: 1...20, step: 1)
+            }
             HStack(spacing: 100) {
                 Text(viewModel.priceDescription)
                     .fontDishCellTrueStyle()

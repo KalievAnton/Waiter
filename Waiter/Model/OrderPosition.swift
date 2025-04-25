@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct OrderPosition: Identifiable {
-    var id: String = .init()
+class OrderPosition: Identifiable {
+    var id: String
     let productID: String
     let title: String
     let price: Int
     var count: Int
     var cost: Int { price * count }
+    
+    init(id: String, productID: String, title: String, price: Int, count: Int) {
+        self.id = .init()
+        self.productID = productID
+        self.title = title
+        self.price = price
+        self.count = count
+    }
 }
 
 extension OrderPosition {
@@ -29,7 +37,7 @@ extension OrderPosition {
 }
 
 extension OrderPosition {
-    init?(_ data: [String : Any]) {
+    convenience init?(_ data: [String : Any]) {
         guard let id = data["id"] as? String,
               let productID = data["productID"] as? String,
               let price = data["price"] as? Int,
