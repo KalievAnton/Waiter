@@ -25,6 +25,17 @@ class TableDetailViewModel {
     
     func addPosition(dish: Dish) {
         self.table.order.append(OrderPosition(id: UUID().uuidString, productID: dish.id, title: dish.title, price: dish.price, count: 1))
+        print(self.table.order)
+    }
+    
+    func saveOrder() {
+        guard let waiterID = AuthService.currentUser?.uid else { return }
+        let order = Order(positions: table.order, waiterID: waiterID, tableID: table.id)
+        Task {
+            try await FirestoreService.setOrder(order)
+        }
+        table.guest = 0
+        table.order.removeAll()
     }
     
    

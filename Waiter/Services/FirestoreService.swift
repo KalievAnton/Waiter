@@ -15,6 +15,8 @@ actor FirestoreService {
     static var dishesRef: CollectionReference { database.collection("dishes") }
     static var dishCategoriesRef: CollectionReference { database.collection("categories") }
     static var tablesRef: CollectionReference { database.collection("tables") }
+    static var ordersRef: CollectionReference { database.collection("orders") }
+
 
     //MARK: - TABLE
     static func fetchTables() async throws -> [Table] {
@@ -23,6 +25,12 @@ actor FirestoreService {
         return data
             .compactMap { Table(data: $0.data()) }
             .sorted { $0.number < $1.number }
+    }
+    
+    static func fetchTable(byID id: String) async throws -> Table {
+        let snapshot = try await tablesRef.document(id).getDocument()
+        guard let table = Table(data: snapshot.data() ?? [:]) else { throw MyError.invalidDataInSnapshot }
+        return table
     }
     
     @discardableResult
@@ -89,5 +97,35 @@ actor FirestoreService {
         }
         
         return allCategories
+    }
+    
+    //MARK: - Orders
+    static func setOrder(_ order: Order) async throws {
+        try await ordersRef.document(order.id).setData(order.representation)
+        let positionsPath = ordersRef.document(order.id).collection("positions")
+        
+        for position in order.positions {
+            try await positionsPath.document(position.id).setData(position.representation)
+        }
+    }
+    
+    static func getOrder(byID id: String) async throws -> Order {
+        let path = ordersRef.document(id)
+        guard let data = try await path.getDocument().data() else { throw MyError.invalidDocumentSnapshot }
+        guard var order = Order(data: data) else { throw MyError.invalidDataInSnapshot }
+        let positionsSnapshot = try await path.collection("positions").getDocuments().documents
+        for snap in positionsSnapshot {
+            let data = snap.data()
+            if let position = OrderPosition(data) {
+                order.positions.append(position)
+            }
+        }
+        return order
+    }
+    
+    static func getAllOrders() async throws -> [Order] {
+        let ordersSnap = try await ordersRef.getDocuments().documents
+        return ordersSnap
+                .compactMap { snap in Order(data: snap.data()) }
     }
 }

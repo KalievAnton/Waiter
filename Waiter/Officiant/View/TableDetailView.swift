@@ -22,6 +22,12 @@ struct TableDetailView: View {
                     }
                 }
             }
+            
+            RoundedButton(text: "Выставить счёт") {
+                viewModel.saveOrder()
+            }
+            
+            
             HStack {
                 Text("ИТОГО:")
                     .tfBottomTotalTableStyle().padding(.leading, 16)

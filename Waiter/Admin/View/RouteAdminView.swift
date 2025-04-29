@@ -18,7 +18,7 @@ struct RouteAdminView: View {
                 .tabItem { Label("Столы", systemImage: "table.furniture") }
             NavigationStack { ProductListView() }
                 .tabItem { Label("Меню", systemImage: "menucard") }
-            NavigationStack { Text("Статистика") }
+            NavigationStack { StatsView() }
                 .tabItem { Label("Статистика", systemImage: "chart.xyaxis.line") }
         }
     }

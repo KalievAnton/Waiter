@@ -31,6 +31,11 @@
 		52FA47512D808AD40024CDC8 /* Color + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA47502D808AD40024CDC8 /* Color + ext.swift */; };
 		52FA47532D808C450024CDC8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */; };
 		B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65760EE2D92BB2100F4EB60 /* TableListView.swift */; };
+		B65AF99E2DC0D02F00247E91 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AF99D2DC0D02F00247E91 /* StatsView.swift */; };
+		B65AF9A02DC0D07800247E91 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AF99F2DC0D07800247E91 /* OrdersView.swift */; };
+		B65AF9A32DC0D0A400247E91 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AF9A22DC0D0A400247E91 /* OrdersViewModel.swift */; };
+		B65AF9A52DC0D5BC00247E91 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AF9A42DC0D5BC00247E91 /* OrderDetailView.swift */; };
+		B65AF9A72DC0D5C800247E91 /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AF9A62DC0D5C800247E91 /* OrderDetailsViewModel.swift */; };
 		B6937EB52DA526F50079B1B2 /* RouteAdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6937EB42DA526F50079B1B2 /* RouteAdminView.swift */; };
 		B6937EB72DA528570079B1B2 /* TableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6937EB62DA528570079B1B2 /* TableListViewModel.swift */; };
 		B69F4F482DAE5A1B00B4E362 /* SetDishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F4F472DAE5A1B00B4E362 /* SetDishViewModel.swift */; };
@@ -93,6 +98,11 @@
 		52FA47502D808AD40024CDC8 /* Color + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + ext.swift"; sourceTree = "<group>"; };
 		52FA47522D808C450024CDC8 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		B65760EE2D92BB2100F4EB60 /* TableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListView.swift; sourceTree = "<group>"; };
+		B65AF99D2DC0D02F00247E91 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		B65AF99F2DC0D07800247E91 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		B65AF9A22DC0D0A400247E91 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		B65AF9A42DC0D5BC00247E91 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		B65AF9A62DC0D5C800247E91 /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
 		B6937EB42DA526F50079B1B2 /* RouteAdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAdminView.swift; sourceTree = "<group>"; };
 		B6937EB62DA528570079B1B2 /* TableListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewModel.swift; sourceTree = "<group>"; };
 		B69F4F472DAE5A1B00B4E362 /* SetDishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDishViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +173,7 @@
 			children = (
 				5207C8E22D8F1D3C005EAE95 /* EmployeeListView.swift */,
 				B6937EB42DA526F50079B1B2 /* RouteAdminView.swift */,
+				B65AF9A12DC0D08300247E91 /* Stats */,
 				B65760EE2D92BB2100F4EB60 /* TableListView.swift */,
 				B6DC68182D9BE83D00A187FD /* ProductListView.swift */,
 				B6DC68262D9E915800A187FD /* CategoryListView.swift */,
@@ -177,6 +188,8 @@
 			children = (
 				5207C8E42D8F1D5E005EAE95 /* EmployeeListViewModel.swift */,
 				B6937EB62DA528570079B1B2 /* TableListViewModel.swift */,
+				B65AF9A22DC0D0A400247E91 /* OrdersViewModel.swift */,
+				B65AF9A62DC0D5C800247E91 /* OrderDetailsViewModel.swift */,
 				B6DC681A2D9BE85A00A187FD /* ProductListViewModel.swift */,
 				B6DC68282D9E917E00A187FD /* CategoryListViewModel.swift */,
 				B69F4F472DAE5A1B00B4E362 /* SetDishViewModel.swift */,
@@ -218,6 +231,16 @@
 				52CDEAB92D846A0E00FD7BDD /* FirestoreService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B65AF9A12DC0D08300247E91 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				B65AF99D2DC0D02F00247E91 /* StatsView.swift */,
+				B65AF99F2DC0D07800247E91 /* OrdersView.swift */,
+				B65AF9A42DC0D5BC00247E91 /* OrderDetailView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		B6D9663F2DAE65030004C09F /* View */ = {
@@ -451,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65AF9A02DC0D07800247E91 /* OrdersView.swift in Sources */,
 				E2EB166F2D14237E00FD4F17 /* TableCell.swift in Sources */,
 				529DE6372D996A5C008D20C2 /* StaffRegistrationViewModel.swift in Sources */,
 				B69F4F482DAE5A1B00B4E362 /* SetDishViewModel.swift in Sources */,
@@ -459,6 +483,7 @@
 				523F019A2D81EEF80011A846 /* TextAuthCustom.swift in Sources */,
 				E24FA4E52D1AC02200F2C93C /* FontDishCell.swift in Sources */,
 				B6DC68172D9BE78200A187FD /* OrderPosition.swift in Sources */,
+				B65AF99E2DC0D02F00247E91 /* StatsView.swift in Sources */,
 				524B70572D832D39008C0356 /* CustomDropdown.swift in Sources */,
 				B65760EF2D92BB2100F4EB60 /* TableListView.swift in Sources */,
 				B6DC68232D9E877E00A187FD /* Order.swift in Sources */,
@@ -468,6 +493,8 @@
 				B6DC68252D9E8BBC00A187FD /* DishCategory.swift in Sources */,
 				E2F0DCE22D26BE6C00FFEF62 /* Fonts + Ext.swift in Sources */,
 				B6937EB52DA526F50079B1B2 /* RouteAdminView.swift in Sources */,
+				B65AF9A32DC0D0A400247E91 /* OrdersViewModel.swift in Sources */,
+				B65AF9A72DC0D5C800247E91 /* OrderDetailsViewModel.swift in Sources */,
 				52CDEABA2D846A0E00FD7BDD /* FirestoreService.swift in Sources */,
 				B6DC68272D9E915800A187FD /* CategoryListView.swift in Sources */,
 				B6DC68192D9BE83D00A187FD /* ProductListView.swift in Sources */,
@@ -501,6 +528,7 @@
 				E24FA4E12D1AB8B300F2C93C /* CustomView + Ext.swift in Sources */,
 				E2EB167B2D1424BA00FD4F17 /* TablesViewModel.swift in Sources */,
 				523F019C2D81F27E0011A846 /* Resourses.swift in Sources */,
+				B65AF9A52DC0D5BC00247E91 /* OrderDetailView.swift in Sources */,
 				52CDEAB62D84670B00FD7BDD /* AuthService.swift in Sources */,
 				5235CD2F2DAE9FDA002BBB89 /* TableSection.swift in Sources */,
 				52FA47512D808AD40024CDC8 /* Color + ext.swift in Sources */,

@@ -15,8 +15,8 @@ class OrderPosition: Identifiable {
     var count: Int
     var cost: Int { price * count }
     
-    init(id: String, productID: String, title: String, price: Int, count: Int) {
-        self.id = .init()
+    init(id: String = UUID().uuidString, productID: String, title: String, price: Int, count: Int) {
+        self.id = id
         self.productID = productID
         self.title = title
         self.price = price
@@ -34,6 +34,10 @@ extension OrderPosition {
             "title": title
         ]
     }
+}
+
+extension OrderPosition: CustomStringConvertible {
+    var description: String {  "\(id) - \(title) (\(count) x \(price))" }
 }
 
 extension OrderPosition {
